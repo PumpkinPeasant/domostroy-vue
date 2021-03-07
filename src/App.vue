@@ -1,7 +1,7 @@
 <template>
-  <v-app>
+  <div>
     <router-view/>
-  </v-app>
+  </div>
 </template>
 
 <script>
@@ -19,3 +19,12 @@ export default {
   }),
 };
 </script>
+<style scoped lang="scss">
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+</style>

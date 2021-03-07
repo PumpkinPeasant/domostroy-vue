@@ -1,5 +1,7 @@
 <template>
-  <v-main>main</v-main>
+  <section>
+
+  </section>
 </template>
 
 <script>
@@ -8,6 +10,12 @@ name: "MainSection"
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("../assets/house1.jpg");
+  background-size: cover;
+}
 </style>

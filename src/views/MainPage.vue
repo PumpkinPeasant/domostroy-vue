@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Header></Header>
+    <main-navigation :menuItems="menuItems"></main-navigation>
     <MainSection></MainSection>
     <Footer></Footer>
   </v-app>
@@ -8,16 +8,39 @@
 
 <script>
 
-import Header from '@/components/Header.vue'
+import MainNavigation from '@/components/MainNavigation.vue'
 import MainSection from '@/components/MainSection.vue'
 import Footer from '@/components/Footer.vue'
 export default {
   name: 'App',
 
   components: {
-    Header,
+    MainNavigation,
     Footer,
     MainSection
-  }}
+  },
+  computed:{
+    menuItems(){
+      return [
+        {
+          title: 'Статистика: Мир',
+          route: '/world'
+        },
+        {
+          title: 'Статистика: Россия',
+          route: '/russia'
+        },
+        {
+          title: 'О нас',
+          route: '/about'
+        },
+        {
+          title: 'Телефон',
+          route: '/login'
+        }
+      ]
+    },
+  }
+}
 
 </script>
