@@ -1,7 +1,7 @@
 <template>
   <nav v-bind:class="navClass">
     <router-link :to="'/'">
-        <img class="logo" src="../assets/logo.svg" alt="Домострой" height="40px" width="40px">
+        <img class="logo" src="../assets/images/logo.svg" alt="Домострой" height="40px" width="40px">
     </router-link>
     <ul>
       <li>
@@ -47,7 +47,7 @@ name: "MainNavigation",
 <style scoped lang="scss">
 nav{
   width: 100%;
-  background-color: blanchedalmond;
+  background-color: transparent;
   display: flex;
   position: fixed;
   justify-content: space-between;
@@ -73,7 +73,7 @@ nav{
         position: relative;
         text-decoration: none;
         margin: 0 15px;
-        color: brown;
+        color: black;
         letter-spacing: 2px;
         transition: 0.6s;
       }
