@@ -1,5 +1,22 @@
 <template>
-  <section id="workingProcess"></section>
+  <section id="workingProcess">
+    <div class="sectionInfo">
+      <h2>
+        Рабочий процесс
+      </h2>
+      <h3>Не знаете с чего начать?</h3>
+      <p>Хотите дом, баню или просто какую то постройку,
+        но не знаете с чего начать? Не проблема!
+        Достаточно нарисовать небольшой набросок
+        и можно смело обращаться к нам, а наши специалисты доработают
+        Вашу идею, помогут и подскажут Вам, как правильнее осуществить
+        Вашу мечту, а так же на чем можно сэкономить!</p>
+      <a target="_blank" href="https://vk.com/domostroi_29" class="moreButton">Подробнее</a>
+    </div>
+    <div class="sectionSide">
+      <img class="sectionSideImg" src="../assets/images/processImg1.jpg" alt="">
+    </div>
+  </section>
 </template>
 
 <script>
@@ -8,16 +25,34 @@ name: "WorkingProcessSection"
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 section {
   display: flex;
-  padding: 10vh;
+  padding: 12vh 8vw;
   position: relative;
   width: 100%;
   height: 115vh;
-  background: #FFDBD0 fixed;
-  align-items: flex-end;
-  justify-content: center;
+  background: #FFEFE9 fixed;
   transition: 500ms linear;
+  h2{
+    color:#D68C45;
+  }
+}
+.sectionInfo{
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  p{
+    text-align: justify;
+  }
+}
+.sectionSideImg{
+  display: flex;
+  border: 2px solid red;
+  justify-items: flex-end;
+  position: relative;
+  left: 8vw;
+  width: 43.125vw;
+  height: auto;
 }
 </style>

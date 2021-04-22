@@ -1,7 +1,13 @@
 <template>
   <section id="home">
     <div class="arrow">
-      <router-link :to="{hash: '#workingProcess'}"><img class="logo" src="../assets/images/icons/arrow.svg" alt=""></router-link>
+      <a href="#" v-scroll-to="{
+          el: '#workingProcess',
+          duration: 200,
+          lazy: true,
+          easing: 'linear',
+          offset: -75,
+          }"><img class="logo" src="../assets/images/icons/arrow.svg" alt=""></a>
     </div>
   </section>
 </template>

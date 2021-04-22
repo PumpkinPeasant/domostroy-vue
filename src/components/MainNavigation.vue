@@ -1,32 +1,73 @@
 <template>
   <nav v-bind:class="navClass">
-    <div class="navItems">
+    <div class="navItems" id="navItemsLeft">
       <ul>
         <li>
-          <router-link :to="'/'">Строительство</router-link>
+          <a href="#" v-scroll-to="{
+          el: '#building',
+          duration: 200,
+          lazy: true,
+          easing: 'linear',
+          offset: -75,
+          }">Строительство</a>
         </li>
         <li>
-          <router-link :to="'/'">Работы</router-link>
+          <a href="#" v-scroll-to="{
+          el: '#works',
+          duration: 200,
+          lazy: true,
+          easing: 'linear',
+          offset: -75,
+          }">Работы</a>
         </li>
         <li>
-          <router-link :to="'/'">Материалы</router-link>
+          <a href="#" v-scroll-to="{
+          el: '#materials',
+          duration: 200,
+          lazy: true,
+          easing: 'linear',
+          offset: -75,
+          }">Материалы</a>
         </li>
       </ul>
     </div>
-
-    <router-link :to="{hash: '#home'}">
+    <a href="#" v-scroll-to="{
+          el: '#home',
+          duration: 200,
+          lazy: true,
+          easing: 'linear',
+          offset: 0,
+          }">
         <img class="logo" id="logo_nav" :src=getImage alt="Домострой логотип">
-    </router-link>
-    <div class="navItems">
+    </a>
+    <div class="navItems" id="navItemsRight">
       <ul>
         <li>
-          <router-link :to="{hash: '#workingProcess'}">Рабочий процесс</router-link>
+          <a href="#" v-scroll-to="{
+          el: '#workingProcess',
+          duration: 200,
+          lazy: true,
+          easing: 'linear',
+          offset: -75,
+          }">Рабочий процесс</a>
         </li>
         <li>
-          <router-link :to="'/'">О нас</router-link>
+          <a href="#" v-scroll-to="{
+          el: '#about',
+          duration: 200,
+          lazy: true,
+          easing: 'linear',
+          offset: -75,
+          }">О нас</a>
         </li>
         <li>
-          <router-link :to="'/'">Контакты</router-link>
+          <a href="#" v-scroll-to="{
+          el: '#contacts',
+          duration: 200,
+          lazy: true,
+          easing: 'linear',
+          offset: -75,
+          }">Контакты</a>
         </li>
       </ul>
     </div>
@@ -54,15 +95,11 @@ name: "MainNavigation",
     handleScroll (event) {
       if (event && window.scrollY > 0){
         this.navClass = 'navScrolled'
-        // let element = document.getElementById("logo_nav")
-        // element.src='../assets/images/logo_color.svg'
-        // console.log(element)
         this.imagePath = 'logo_color.svg';
       }
       else{
         this.navClass = ''
         this.imagePath = 'logo_white.svg';
-        //document.getElementById("logo_nav").src= '../assets/images/'+ this.imagePath;
       }
     },
   },
@@ -85,7 +122,7 @@ nav{
   left: 0;
   align-items: center;
   transition: 0.6s;
-  padding: 40px 90px;
+  padding: 40px 8vw;
   z-index: 100000;
   .navItems{
     display: flex;
@@ -97,7 +134,7 @@ nav{
     position: relative;
     display: flex;
     flex-grow: 1;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-inline-start: 0;
     li{
       display: flex;
@@ -129,8 +166,14 @@ nav{
     height: auto;
   }
 }
+#navItemsLeft{
+  padding-right: 4.375vw;
+}
+#navItemsRight{
+  padding-left: 4.375vw;
+}
 .navScrolled{
-  padding: 5px 100px;
+  padding: 5px 8vw;
   background: #fff;
   height: 11vh;
   ul{

@@ -1,8 +1,13 @@
 <template>
   <v-app>
-    <main-navigation :menuItems="menuItems"></main-navigation>
+    <main-navigation/>
     <main-section></main-section>
     <working-process-section></working-process-section>
+    <constructing-section></constructing-section>
+    <works-section></works-section>
+    <materials-section></materials-section>
+    <about-section/>
+    <contacts-section/>
     <Footer></Footer>
   </v-app>
 </template>
@@ -12,38 +17,52 @@
 import MainNavigation from '@/components/MainNavigation.vue'
 import MainSection from '@/components/MainSection.vue'
 import WorkingProcessSection from '@/components/WorkingProcessSection.vue'
+import ConstructingSection from '@/components/ConstructingSection.vue'
+import WorksSection from '@/components/WorksSection.vue'
+import MaterialsSection from '@/components/MaterialsSection.vue'
+import AboutSection from '@/components/AboutSection.vue'
+import ContactsSection from '@/components/ContactsSection.vue'
 import Footer from '@/components/Footer.vue'
+
 export default {
   name: 'App',
-
+  data() {
+    return {
+      sections: null
+    }
+  },
   components: {
     MainNavigation,
     Footer,
     MainSection,
-    WorkingProcessSection
+    WorkingProcessSection,
+    ConstructingSection,
+    WorksSection,
+    MaterialsSection,
+    AboutSection,
+    ContactsSection,
+
   },
-  computed:{
-    menuItems(){
-      return [
-        {
-          title: 'Статистика: Мир',
-          route: '/world'
-        },
-        {
-          title: 'Статистика: Россия',
-          route: '/russia'
-        },
-        {
-          title: 'О нас',
-          route: '/about'
-        },
-        {
-          title: 'Телефон',
-          route: '/login'
-        }
-      ]
-    },
-  }
 }
 
 </script>
+<style lang="scss">
+  h2{
+    font-family: Montserrat, serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1vw;
+  }
+  h3{
+    font-family: "Yeseva One", serif;
+    font-size: 2vw;
+    letter-spacing: 0.05vw;
+  }
+  p{
+    font-family: Montserrat, serif;
+    font-weight: 500;
+    font-size: 1.2vw;
+    letter-spacing: -0.01vw;
+    line-height: 155%;
+  }
+</style>
