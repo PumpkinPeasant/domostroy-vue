@@ -1,17 +1,35 @@
 <template>
   <nav v-bind:class="navClass">
-    <router-link :to="'/'">
-        <img class="logo" src="../assets/images/logo.svg" alt="Домострой" height="40px" width="40px">
+    <div class="navItems">
+      <ul>
+        <li>
+          <router-link :to="'/'">Строительство</router-link>
+        </li>
+        <li>
+          <router-link :to="'/'">Работы</router-link>
+        </li>
+        <li>
+          <router-link :to="'/'">Материалы</router-link>
+        </li>
+      </ul>
+    </div>
+
+    <router-link :to="{hash: '#home'}">
+        <img class="logo" id="logo_nav" :src=getImage alt="Домострой логотип">
     </router-link>
-    <ul>
-      <li>
-        <router-link v-for="(item, i) in menuItems"
-                     :key="`menuItem${i}`"
-                     :to="item.route">
-          {{item.title}}
-        </router-link>
-      </li>
-    </ul>
+    <div class="navItems">
+      <ul>
+        <li>
+          <router-link :to="{hash: '#workingProcess'}">Рабочий процесс</router-link>
+        </li>
+        <li>
+          <router-link :to="'/'">О нас</router-link>
+        </li>
+        <li>
+          <router-link :to="'/'">Контакты</router-link>
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>
 
@@ -22,7 +40,8 @@ name: "MainNavigation",
   props:['menuItems','background'],
   data(){
     return{
-      navClass:''
+      navClass:'',
+      imagePath:'logo_white.svg',
     }
   },
   created () {
@@ -35,10 +54,21 @@ name: "MainNavigation",
     handleScroll (event) {
       if (event && window.scrollY > 0){
         this.navClass = 'navScrolled'
+        // let element = document.getElementById("logo_nav")
+        // element.src='../assets/images/logo_color.svg'
+        // console.log(element)
+        this.imagePath = 'logo_color.svg';
       }
       else{
         this.navClass = ''
+        this.imagePath = 'logo_white.svg';
+        //document.getElementById("logo_nav").src= '../assets/images/'+ this.imagePath;
       }
+    },
+  },
+  computed: {
+    getImage() {
+      return require(`../assets/images/${this.imagePath}`)
     }
   }
 }
@@ -55,48 +85,62 @@ nav{
   left: 0;
   align-items: center;
   transition: 0.6s;
-  padding: 40px 100px;
+  padding: 40px 90px;
   z-index: 100000;
+  .navItems{
+    display: flex;
+    justify-items: center;
+    flex-grow: 1;
+    justify-content: center;
+  }
   ul {
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-block-start: 0;
-    margin-block-end: 0;
+    flex-grow: 1;
+    justify-content: space-around;
     padding-inline-start: 0;
     li{
+      display: flex;
+      font-family: Prata, sans-serif;
       position: relative;
-      font-size: 18px;
+      color: #FDFDF9;
+      font-size: 1em;
       list-style: none;
+      cursor: pointer;
+      letter-spacing: 0.08em;
       a{
         position: relative;
+        color: #FDFDF9;
         text-decoration: none;
-        margin: 0 15px;
-        color: black;
-        letter-spacing: 2px;
-        transition: 0.6s;
+        transition: 0.4s;
+        border-bottom:2px solid transparent;
       }
       a:hover{
-        background-color: azure;
+        border-bottom:2px solid #D68C45;
       }
     }
   }
+
   .logo{
+    display: flex;
     position: relative;
     transition: 0.6s;
+    width: 18.5vw;
+    height: auto;
   }
 }
 .navScrolled{
   padding: 5px 100px;
   background: #fff;
+  height: 11vh;
   ul{
     li{
       a{
-        color: #000;
+        color: #195131;
       }
     }
   }
+
 }
 
 @media screen and (max-width: 759px) {

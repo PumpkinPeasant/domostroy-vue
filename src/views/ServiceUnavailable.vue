@@ -13,6 +13,7 @@
     <a href="https://vk.com/domctroy">
       <button>Перейти в VK</button>
     </a>
+
   </div>
 
 </section>
@@ -23,21 +24,33 @@ export default {
 name: "ServiceUnavailable",
   data () {
     return {
-      imgUrl: '../assets/images/house2.png'
+      imgUrl: '../assets/images/house2.png',
     }
 
-}
+},
+  methods: {
+    changeStyle(){
+      return "'background: " + this.backgr + "'"
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
+.round {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  line-height: 10em;  /* подробнее про line-height */
+  text-align: center;  /* выравнять текст по середине по горизонтали */;
+}
 section {
   display: flex;
   padding: 20px;
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url("../assets/images/house2.jpg"),rgba(0,0,0,0.5);
+  background: url("../assets/images/house2.jpg"),rgba(0,0,0,0.5) fixed;
   background-blend-mode: overlay;
   color: #FDFDF9;
   background-size: cover;
@@ -180,8 +193,6 @@ h2::after {
 }
 @media only screen and (max-width: 642px) {
   section {
-    padding: 20px;
-    width: 100%;
     div {
       max-width: 480px;
       h1 {
@@ -220,8 +231,6 @@ h2::after {
 }
 @media only screen and (max-width: 405px) {
   section {
-    padding: 20px;
-    width: 100%;
     div {
       max-width: 280px;
       h1 {

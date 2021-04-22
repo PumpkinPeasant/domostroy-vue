@@ -19,7 +19,7 @@ export default {
   }),
 };
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 @font-face {
   font-family: YesevaOne;
@@ -33,7 +33,8 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 </style>

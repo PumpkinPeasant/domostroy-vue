@@ -1,7 +1,8 @@
 <template>
   <v-app>
     <main-navigation :menuItems="menuItems"></main-navigation>
-    <MainSection></MainSection>
+    <main-section></main-section>
+    <working-process-section></working-process-section>
     <Footer></Footer>
   </v-app>
 </template>
@@ -10,6 +11,7 @@
 
 import MainNavigation from '@/components/MainNavigation.vue'
 import MainSection from '@/components/MainSection.vue'
+import WorkingProcessSection from '@/components/WorkingProcessSection.vue'
 import Footer from '@/components/Footer.vue'
 export default {
   name: 'App',
@@ -17,7 +19,8 @@ export default {
   components: {
     MainNavigation,
     Footer,
-    MainSection
+    MainSection,
+    WorkingProcessSection
   },
   computed:{
     menuItems(){
