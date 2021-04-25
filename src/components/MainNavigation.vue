@@ -141,7 +141,7 @@ nav{
       font-family: Prata, sans-serif;
       position: relative;
       color: #FDFDF9;
-      font-size: 1em;
+      font-size: 1vw;
       list-style: none;
       cursor: pointer;
       letter-spacing: 0.08em;

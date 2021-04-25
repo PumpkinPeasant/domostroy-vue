@@ -27,7 +27,9 @@ name: "WorkingProcessSection"
 
 <style scoped lang="scss">
 section {
-  display: flex;
+  display: grid;
+  grid-template-columns: 35vw auto;
+  column-gap: 5vw;
   padding: 12vh 8vw;
   position: relative;
   width: 100%;
@@ -37,22 +39,41 @@ section {
   h2{
     color:#D68C45;
   }
+  h3{
+    padding: 6vh 0 2vh 0;
+    color: #033319;
+  }
+  p{
+    color: #20633E;
+    padding: 1vh 0 3vh 0;
+  }
 }
 .sectionInfo{
-  border: 2px solid green;
   display: flex;
   flex-direction: column;
   p{
     text-align: justify;
   }
 }
+.sectionInfoImgDiv{
+
+  border: 2px solid #18ffff;
+}
+.sectionInfoImg{
+  position: relative;
+  top: 300px;
+  width: 100%;
+}
 .sectionSideImg{
   display: flex;
-  border: 2px solid red;
   justify-items: flex-end;
   position: relative;
   left: 8vw;
-  width: 43.125vw;
+  width: 100%;
   height: auto;
+  box-shadow: 0 4px 29px -4px rgba(146,66,49,.5) ;
+}
+.moreButton{
+  color: #FDFDF9;
 }
 </style>
