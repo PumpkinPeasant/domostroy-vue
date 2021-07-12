@@ -21,8 +21,6 @@ name: "WorksSection"
 
 <style scoped lang="scss">
 section {
-  display: flex;
-  padding: 12vh 8vw;
   position: relative;
   width: 100%;
   height: 115vh;

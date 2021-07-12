@@ -146,8 +146,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   transition: 0.6s;
-  padding: 40px 8vw;
   z-index: 100000;
+  padding: 40px 8vw;
 
   .navItems {
     display: flex;
@@ -168,7 +168,7 @@ nav {
       font-family: Prata, sans-serif;
       position: relative;
       color: #FDFDF9;
-      @include fluid-type(320px, 1900px, 12px, 20px);
+      @include fluid-type(960px, 1900px, 13px, 20px);
       list-style: none;
       cursor: pointer;
       letter-spacing: 0.08em;
@@ -226,10 +226,13 @@ nav {
     }
   }
 }
-
+//laptop
 @media screen and (min-width: 960px) and (max-width: 1280px) {
   nav {
-    padding: 15px 6vw;
+    padding: 25px 7vw;
+  }
+  .navScrolled {
+    padding: 5px 9vw;
   }
 }
 

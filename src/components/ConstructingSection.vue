@@ -58,6 +58,7 @@ name: "ConstructingSection"
 
 <style scoped lang="scss">
 section {
+  flex-direction: column;
   padding: 23vh 8vw 12vh 8vw;
   position: relative;
   width: 100%;
@@ -130,6 +131,7 @@ section {
   color: #ffffff;
 }
 .decorationTree{
+  position: absolute;
   height: 90vh;
   top:-50vh;
   left: 65vw;

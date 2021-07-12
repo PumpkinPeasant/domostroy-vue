@@ -31,8 +31,6 @@ name: "WorkingProcessSection"
 
 <style scoped lang="scss">
 section {
-  display: flex;
-  padding: 12vh 8vw;
   justify-content: space-between;
   width: 100%;
   height: 115vh;
@@ -85,11 +83,28 @@ section {
 }
 .sectionSideImg{
   width: auto;
-  height: 90vh;
+  height: 100%;
+  max-height: 90vh;
   box-shadow: 0 4px 29px -4px rgba(146,66,49,.5) ;
   z-index: 3;
 }
 .moreButton{
   color: #FDFDF9;
+}
+@media screen and (min-width:959px) and (max-width:1280px){
+  section{
+    height: 100vh;
+  }
+  .sectionSideImg{
+    max-width: 40vw;
+    max-height: unset;
+    height: auto;
+  }
+}
+@media screen and (min-width:600px) and (max-width:959px){
+
+}
+@media screen and (max-width:599px) {
+
 }
 </style>

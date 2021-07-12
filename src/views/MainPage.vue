@@ -3,7 +3,7 @@
     <main-navigation :is-menu-visible.sync="isMenuVisible"/>
     <main-section></main-section>
     <working-process-section/>
-    <!--    <constructing-section></constructing-section>-->
+    <constructing-section/>
     <!--    <works-section></works-section>-->
     <!--    <materials-section></materials-section>-->
     <!--    <about-section/>-->
@@ -17,11 +17,10 @@
 import MainNavigation from '@/components/MainNavigation.vue'
 import MainSection from '@/components/MainSection.vue'
 import WorkingProcessSection from '@/components/WorkingProcessSection.vue'
-// import ConstructingSection from '@/components/ConstructingSection.vue'
+import ConstructingSection from '@/components/ConstructingSection.vue'
 // import WorksSection from '@/components/WorksSection.vue'
 // import MaterialsSection from '@/components/MaterialsSection.vue'
 // import AboutSection from '@/components/AboutSection.vue'
-// import ContactsSection from '@/components/ContactsSection.vue'
 // import Footer from '@/components/Footer.vue'
 
 export default {
@@ -42,7 +41,7 @@ export default {
     // Footer,
     MainSection,
     WorkingProcessSection,
-    // ConstructingSection,
+    ConstructingSection,
     // WorksSection,
     // MaterialsSection,
     // AboutSection,
@@ -56,6 +55,11 @@ export default {
 
 .main-page {
   height: 100vh;
+}
+
+section {
+  display: flex;
+  padding: 12vh 8vw;
 }
 
 h2 {
@@ -103,14 +107,20 @@ p {
 }
 
 @media screen and (min-width: 959px) and (max-width: 1280px) {
-
+  section {
+    padding: 10vh 9vw;
+  }
 }
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
-
+  section {
+    padding: 12vh 4vw;
+  }
 }
 
 @media screen and (max-width: 599px) {
-
+  section {
+    padding: 12vh 4vw;
+  }
 }
 </style>

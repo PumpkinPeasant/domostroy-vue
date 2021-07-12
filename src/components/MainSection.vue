@@ -20,8 +20,6 @@ name: "MainSection"
 
 <style scoped lang="scss">
 section{
-  display: flex;
-  padding: 10vh;
   position: relative;
   width: 100%;
   height: 100vh;
