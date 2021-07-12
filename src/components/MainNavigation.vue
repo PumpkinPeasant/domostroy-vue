@@ -74,7 +74,11 @@
       </ul>
     </div>
     <div class="toggleButton">
-      <i class="material-icons" style="color: white" @click="toggleMenu">
+      <i
+          class="material-icons"
+          style="color: white"
+          @click="toggleMenu"
+      >
         menu
       </i>
     </div>
@@ -85,13 +89,16 @@
 
 export default {
   name: "MainNavigation",
-  props: ['menuItems', 'background'],
+  props: {
+    menuItems: Array,
+    background: Object,
+    isMenuVisible: Boolean,
+  },
   data() {
     return {
       navClass: '',
       imagePath: 'logo_white.svg',
       openMenuOnMobile: '',
-      isMenuVisible: false
     }
   },
   created() {
@@ -110,16 +117,19 @@ export default {
         this.imagePath = 'logo_white.svg';
       }
     },
-    toggleMenu(){
-      this.isMenuVisible = !this.isMenuVisible;
-      this.openMenuOnMobile = this.isMenuVisible ? 'flex' : 'none';
+    toggleMenu() {
+      console.log(!this.isMenuVisible);
+      this.$emit('update:isMenuVisible', !this.isMenuVisible);
+      this.$nextTick(() => {
+        this.openMenuOnMobile = this.isMenuVisible ? 'flex' : 'none';
+      })
     }
   },
   computed: {
     getImage() {
       return require(`../assets/images/${this.imagePath}`)
     },
-    getMenuVisibility(){
+    getMenuVisibility() {
       return `display: ${this.openMenuOnMobile}`
     }
   }
@@ -228,6 +238,7 @@ nav {
 @media screen and (min-width: 600px) and (max-width: 959px) {
   nav {
     padding: 20px 4vw;
+
     .logo {
     }
 
@@ -245,14 +256,17 @@ nav {
 @media screen and (max-width: 599px) {
   nav {
     padding: 20px 4vw;
-    a{
+
+    a {
       flex-grow: 1;
+
       .logo {
         display: flex;
         width: 100%;
         height: 100%;
         justify-content: center;
-        img{
+
+        img {
           z-index: 10;
           width: auto;
           height: 100%;
@@ -278,34 +292,41 @@ nav {
       backdrop-filter: blur(5px);
       height: 100vh;
       width: 100%;
-      ul{
+
+      ul {
         flex-direction: column;
         justify-content: unset;
-        li{
+
+        li {
           height: 100%;
           flex-grow: 1;
-          a{
+
+          a {
             display: flex;
             justify-content: center;
             align-items: center;
             border: none;
           }
-          a:hover{
-            background: rgba(255,255,255,0.4);
+
+          a:hover {
+            background: rgba(255, 255, 255, 0.4);
           }
-          a:active{
-            background: rgba(255,255,255,0.6);
+
+          a:active {
+            background: rgba(255, 255, 255, 0.6);
           }
         }
       }
     }
+
     #navItemsLeft {
       height: 50vh;
       padding: 10vh 0 0 0;
     }
+
     #navItemsRight {
       height: 50vh;
-      padding:  0 0 10vh 0;
+      padding: 0 0 10vh 0;
       top: 50vh;
     }
   }

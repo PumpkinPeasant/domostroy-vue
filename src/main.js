@@ -4,7 +4,9 @@ import store from './store'
 import router from './router'
 import VueLazyload from 'vue-lazyload'
 import  VueScrollTo from 'vue-scrollto';
+
 import 'material-icons/iconfont/material-icons.css';
+import './styles.scss';
 
 Vue.config.productionTip = false
 Vue.use(VueLazyload)
