@@ -118,7 +118,6 @@ export default {
       }
     },
     toggleMenu() {
-      console.log(!this.isMenuVisible);
       this.$emit('update:isMenuVisible', !this.isMenuVisible);
       this.$nextTick(() => {
         this.openMenuOnMobile = this.isMenuVisible ? 'flex' : 'none';
