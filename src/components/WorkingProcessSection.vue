@@ -16,6 +16,10 @@
     <div class="sectionSide">
       <img class="sectionSideImg" src="../assets/images/processImg1.jpg" alt="">
     </div>
+    <div class="sectionInfoImgDiv">
+      <img class="sectionInfoImg" id="sectionInfoImg1" src="../assets/images/processImg2.jpg" alt="">
+      <img class="sectionInfoImg" id="sectionInfoImg2" src="../assets/images/textures/processImgDecoration.jpg" alt="">
+    </div>
   </section>
 </template>
 
@@ -27,51 +31,63 @@ name: "WorkingProcessSection"
 
 <style scoped lang="scss">
 section {
-  display: grid;
-  grid-template-columns: 35vw auto;
-  column-gap: 5vw;
+  display: flex;
   padding: 12vh 8vw;
-  position: relative;
+  justify-content: space-between;
   width: 100%;
   height: 115vh;
-  background: #FFEFE9 fixed;
+  background: #FFEFE9;
   transition: 500ms linear;
   h2{
     color:#D68C45;
   }
   h3{
+    font-weight: normal;
     padding: 6vh 0 2vh 0;
     color: #033319;
   }
   p{
     color: #20633E;
     padding: 1vh 0 3vh 0;
+    line-height: 140%;
   }
 }
 .sectionInfo{
   display: flex;
+  width: 30vw;
   flex-direction: column;
   p{
     text-align: justify;
   }
 }
 .sectionInfoImgDiv{
-
-  border: 2px solid #18ffff;
+  align-self: flex-end;
+  position: absolute;
 }
 .sectionInfoImg{
-  position: relative;
-  top: 300px;
-  width: 100%;
+  display: flex;
+  position: absolute;
+  width: 31vw;
+}
+#sectionInfoImg1{
+  z-index: 2;
+  bottom: -10vw;
+  box-shadow: 0 4px 29px -4px rgba(146,66,49,.5) ;
+}
+#sectionInfoImg2{
+  z-index: 1;
+  bottom: -12vw;
+  left: -2vw;
+}
+.sectionSide{
+  display: flex;
+  justify-content: flex-end;
 }
 .sectionSideImg{
-  display: flex;
-  justify-items: flex-end;
-  position: relative;
-  left: 8vw;
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 90vh;
   box-shadow: 0 4px 29px -4px rgba(146,66,49,.5) ;
+  z-index: 3;
 }
 .moreButton{
   color: #FDFDF9;

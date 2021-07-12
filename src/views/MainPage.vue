@@ -2,17 +2,13 @@
   <v-app>
     <main-navigation/>
     <main-section></main-section>
-    <working-process-section></working-process-section>
-    <div class="sectionInfoImgDiv">
-      <img class="sectionInfoImg" src="../assets/images/processImg2.jpg" alt="">
-      <img class="sectionInfoImg" src="../assets/images/textures/processImgDecoration.jpg" alt="">
-    </div>
-    <constructing-section></constructing-section>
-    <works-section></works-section>
-    <materials-section></materials-section>
-    <about-section/>
-    <contacts-section/>
-    <Footer></Footer>
+    <working-process-section/>
+<!--    <constructing-section></constructing-section>-->
+<!--    <works-section></works-section>-->
+<!--    <materials-section></materials-section>-->
+<!--    <about-section/>-->
+<!--    <contacts-section/>-->
+<!--    <Footer></Footer>-->
   </v-app>
 </template>
 
@@ -21,12 +17,12 @@
 import MainNavigation from '@/components/MainNavigation.vue'
 import MainSection from '@/components/MainSection.vue'
 import WorkingProcessSection from '@/components/WorkingProcessSection.vue'
-import ConstructingSection from '@/components/ConstructingSection.vue'
-import WorksSection from '@/components/WorksSection.vue'
-import MaterialsSection from '@/components/MaterialsSection.vue'
-import AboutSection from '@/components/AboutSection.vue'
-import ContactsSection from '@/components/ContactsSection.vue'
-import Footer from '@/components/Footer.vue'
+// import ConstructingSection from '@/components/ConstructingSection.vue'
+// import WorksSection from '@/components/WorksSection.vue'
+// import MaterialsSection from '@/components/MaterialsSection.vue'
+// import AboutSection from '@/components/AboutSection.vue'
+// import ContactsSection from '@/components/ContactsSection.vue'
+// import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'App',
@@ -37,14 +33,14 @@ export default {
   },
   components: {
     MainNavigation,
-    Footer,
+    // Footer,
     MainSection,
     WorkingProcessSection,
-    ConstructingSection,
-    WorksSection,
-    MaterialsSection,
-    AboutSection,
-    ContactsSection,
+    // ConstructingSection,
+    // WorksSection,
+    // MaterialsSection,
+    // AboutSection,
+    // ContactsSection,
 
   },
 }
@@ -77,24 +73,25 @@ export default {
     color: #FDFDF9;
     background-color: #195131;
     text-decoration: none;
-    padding: 1vw 2vw;
+    padding: 1vw 3vw;
     width: fit-content;
     transition: 0.2s;
   }
   .moreButton:hover{
     background-color: #033319;
   }
-
-
-
-
-
-  .sectionInfoImgDiv{
+  .decorationTree{
     position: absolute;
-    display: flex;
+    z-index: 0;
+    mix-blend-mode: multiply;
   }
-  .sectionInfoImg{
+  @media screen and (min-width:959px) and (max-width:1280px){
 
-    width: 35vw;
+  }
+  @media screen and (min-width:600px) and (max-width:959px){
+
+  }
+  @media screen and (max-width:599px) {
+
   }
 </style>

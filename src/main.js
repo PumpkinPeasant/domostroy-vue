@@ -13,6 +13,7 @@ Vue.use(VueScrollTo)
 const loadimage = require('@/assets/images/logo.png')
 const errorimage = require('@/assets/images/logo.png')
 
+
 Vue.use(VueLazyload, {
   preLoad: 1.3,
   error: errorimage,

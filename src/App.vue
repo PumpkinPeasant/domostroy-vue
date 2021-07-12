@@ -21,14 +21,8 @@ export default {
 </script>
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
-@font-face {
-  font-family: YesevaOne;
-  src: url(/assets/fonts/YesevaOne-Regular.ttf);
-}
-@font-face {
-  font-family: Prata;
-  src: url(/assets/fonts/Prata-Regular.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 *{
   margin: 0;
   padding: 0;
