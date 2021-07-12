@@ -72,12 +72,11 @@
           }">Контакты</a>
         </li>
       </ul>
-
     </div>
     <div class="toggleButton">
-      <v-icon color="white" @click="toggleMenu">
-        mdi-menu
-      </v-icon>
+      <i class="material-icons" style="color: white" @click="toggleMenu">
+        menu
+      </i>
     </div>
   </nav>
 </template>

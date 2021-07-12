@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import vuetify from './plugins/vuetify';
 import store from './store'
 import router from './router'
 import VueLazyload from 'vue-lazyload'
 import  VueScrollTo from 'vue-scrollto';
+import 'material-icons/iconfont/material-icons.css';
 
 Vue.config.productionTip = false
 Vue.use(VueLazyload)
@@ -42,9 +42,7 @@ router.afterEach((to, from) => {
 });
 
 new Vue({
-  vuetify,
   router,
-
   store,
   render: h => h(App)
 }).$mount('#app')

@@ -1,15 +1,15 @@
 <template>
-  <v-app>
+  <div>
     <main-navigation/>
     <main-section></main-section>
     <working-process-section/>
-<!--    <constructing-section></constructing-section>-->
-<!--    <works-section></works-section>-->
-<!--    <materials-section></materials-section>-->
-<!--    <about-section/>-->
-<!--    <contacts-section/>-->
-<!--    <Footer></Footer>-->
-  </v-app>
+    <!--    <constructing-section></constructing-section>-->
+    <!--    <works-section></works-section>-->
+    <!--    <materials-section></materials-section>-->
+    <!--    <about-section/>-->
+    <!--    <contacts-section/>-->
+    <!--    <Footer></Footer>-->
+  </div>
 </template>
 
 <script>
