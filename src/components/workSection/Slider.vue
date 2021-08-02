@@ -1,6 +1,6 @@
 <template>
 <div>
-
+ тут юудет слайдер
 </div>
 </template>
 

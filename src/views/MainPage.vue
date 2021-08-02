@@ -1,10 +1,10 @@
 <template>
-  <div class="main-page" v-bind:style="mainStyle">
+  <div class="main-page">
     <main-navigation :is-menu-visible.sync="isMenuVisible"/>
     <main-section></main-section>
     <working-process-section/>
     <constructing-section/>
-    <!--    <works-section></works-section>-->
+    <works-section></works-section>
     <!--    <materials-section></materials-section>-->
     <!--    <about-section/>-->
     <!--    <contacts-section/>-->
@@ -18,7 +18,7 @@ import MainNavigation from '@/components/MainNavigation.vue'
 import MainSection from '@/components/MainSection.vue'
 import WorkingProcessSection from '@/components/WorkingProcessSection.vue'
 import ConstructingSection from '@/components/ConstructingSection.vue'
-// import WorksSection from '@/components/WorksSection.vue'
+import WorksSection from '@/components/WorksSection.vue'
 // import MaterialsSection from '@/components/MaterialsSection.vue'
 // import AboutSection from '@/components/AboutSection.vue'
 // import Footer from '@/components/Footer.vue'
@@ -32,9 +32,6 @@ export default {
     }
   },
   computed: {
-    mainStyle() {
-      return this.isMenuVisible ? 'overflow-y: hidden' : 'overflow-y: scroll';
-    }
   },
   components: {
     MainNavigation,
@@ -42,7 +39,7 @@ export default {
     MainSection,
     WorkingProcessSection,
     ConstructingSection,
-    // WorksSection,
+    WorksSection,
     // MaterialsSection,
     // AboutSection,
     // ContactsSection,
@@ -51,11 +48,8 @@ export default {
 }
 
 </script>
-<style lang="scss">
 
-.main-page {
-  height: 100vh;
-}
+<style lang="scss">
 
 section {
   display: flex;
@@ -96,9 +90,28 @@ p {
   transition: 0.2s;
 }
 
+.moreTextButton{
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid #D68C45;
+  width: fit-content;
+
+}
+
 .moreButton:hover {
   background-color: #033319;
 }
+
+.moreButton:active {
+  background-color: #022411;
+}
+
 
 .decorationTree {
   position: absolute;
@@ -108,19 +121,37 @@ p {
 
 @media screen and (min-width: 959px) and (max-width: 1280px) {
   section {
-    padding: 10vh 9vw;
+    padding: 10vh 8vw;
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
   section {
-    padding: 12vh 4vw;
+    padding: 9vh 7vw;
   }
 }
 
 @media screen and (max-width: 599px) {
   section {
-    padding: 12vh 4vw;
+
+    padding: 10vh 6vw;
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    h3 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      line-height: 1.8em;
+    }
+    .moreButton {
+      font-size: 1.5rem;
+      padding: 0.8em 2em;
+    }
   }
 }
 </style>

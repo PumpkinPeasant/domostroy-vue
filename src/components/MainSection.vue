@@ -7,7 +7,7 @@
           lazy: true,
           easing: 'linear',
           offset: -75,
-          }"><img class="logo" src="../assets/images/icons/arrow.svg" alt=""></a>
+          }"><img class="arrowImg" src="../assets/images/icons/arrow.svg" alt=""></a>
     </div>
   </section>
 </template>
@@ -33,18 +33,49 @@ section{
     padding: 0.5vw;
     cursor: pointer;
     top: 0;
+    .arrowImg{
+      width: 1vw;
+      height: auto;
+      position: relative;
+      top: 0;
+      transition-duration: .6s;
+      cursor: pointer;
+    }
   }
-  .logo{
-    width: 1vw;
-    height: auto;
-    position: relative;
-    top: 0;
-    transition-duration: .6s;
-    cursor: pointer;
-  }
-  .arrow .logo:hover{
+
+  .arrow .arrowImg:hover{
     filter: drop-shadow( 0 0 10px rgba(255, 255, 255, 0.7));
     top: -1vw;
+  }
+}
+
+@media screen and (min-width: 959px) and (max-width: 1280px) {
+  section {
+    .arrow{
+      .arrowImg{
+        width: 1.4vw;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  section {
+    .arrow{
+      .arrowImg{
+        width: 2vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  section {
+    .arrow{
+      .arrowImg{
+        width: 3vw;
+      }
+    }
   }
 }
 </style>

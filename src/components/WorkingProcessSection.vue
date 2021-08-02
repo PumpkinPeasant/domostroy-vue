@@ -25,7 +25,7 @@
 
 <script>
 export default {
-name: "WorkingProcessSection"
+  name: "WorkingProcessSection"
 }
 </script>
 
@@ -36,75 +36,146 @@ section {
   height: 115vh;
   background: #FFEFE9;
   transition: 500ms linear;
-  h2{
-    color:#D68C45;
+
+  h2 {
+    color: #D68C45;
   }
-  h3{
+
+  h3 {
     font-weight: normal;
     padding: 6vh 0 2vh 0;
     color: #033319;
   }
-  p{
+
+  p {
     color: #20633E;
     padding: 1vh 0 3vh 0;
-    line-height: 140%;
+    line-height: 1.5em;
   }
 }
-.sectionInfo{
+//section::after{
+//  content: "";
+//  position: absolute;
+//  z-index: 1;
+//  background-repeat: no-repeat;
+//  background-size: contain;
+//  background-position: 50%;
+//  background-image: url("../assets/images/trees/tree1.svg");
+//}
+
+.sectionInfo {
   display: flex;
   width: 30vw;
   flex-direction: column;
-  p{
+
+  p {
     text-align: justify;
   }
 }
-.sectionInfoImgDiv{
+
+.sectionInfoImgDiv {
   align-self: flex-end;
   position: absolute;
 }
-.sectionInfoImg{
+
+.sectionInfoImg {
   display: flex;
   position: absolute;
   width: 31vw;
 }
-#sectionInfoImg1{
+
+#sectionInfoImg1 {
   z-index: 2;
   bottom: -10vw;
-  box-shadow: 0 4px 29px -4px rgba(146,66,49,.5) ;
+  box-shadow: 0 4px 29px -4px rgba(146, 66, 49, .5);
 }
-#sectionInfoImg2{
+
+#sectionInfoImg2 {
   z-index: 1;
   bottom: -12vw;
   left: -2vw;
 }
-.sectionSide{
+
+.sectionSide {
   display: flex;
   justify-content: flex-end;
 }
-.sectionSideImg{
+
+.sectionSideImg {
   width: auto;
   height: 100%;
   max-height: 90vh;
-  box-shadow: 0 4px 29px -4px rgba(146,66,49,.5) ;
+  box-shadow: 0 4px 29px -4px rgba(146, 66, 49, .5);
   z-index: 3;
 }
-.moreButton{
+
+.moreButton {
   color: #FDFDF9;
 }
-@media screen and (min-width:959px) and (max-width:1280px){
-  section{
-    height: 100vh;
+
+@media screen and (min-width: 959px) and (max-width: 1280px) {
+  section {
+    height: 95vh;
+
+    p {
+      line-height: 1.7em;
+    }
   }
-  .sectionSideImg{
-    max-width: 40vw;
-    max-height: unset;
-    height: auto;
+  .sectionSideImg {
+    max-height: 80vh;
   }
 }
-@media screen and (min-width:600px) and (max-width:959px){
 
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  section {
+    height: 85vh;
+
+    p {
+      line-height: 1.7em;
+    }
+
+    .sectionSideImg {
+      max-height: 65vh;
+    }
+
+
+    .sectionInfoImg {
+      width: 33vw;
+    }
+  }
 }
-@media screen and (max-width:599px) {
 
+@media screen and (max-width: 599px) {
+  section {
+    height: 145vh;
+    flex-direction: column;
+
+    p {
+      padding-bottom: 3em;
+      line-height: 1.8em;
+    }
+    .sectionInfo{
+      width: 100%;
+    }
+
+    .sectionSideImg {
+      display: none;
+    }
+    .sectionInfoImgDiv {
+      z-index: 5;
+      align-self: unset;
+      position: relative;
+      .sectionInfoImg {
+        position: unset;
+        width: 100%;
+        height: auto;
+      }
+      #sectionInfoImg2 {
+        display: none;
+      }
+    }
+
+
+  }
 }
 </style>

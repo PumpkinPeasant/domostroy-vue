@@ -9,7 +9,9 @@
           lazy: true,
           easing: 'linear',
           offset: 10,
-          }">Строительство</a>
+          }"
+             @click="toggleMenu"
+          >Строительство</a>
         </li>
         <li>
           <a href="#" v-scroll-to="{
@@ -18,7 +20,9 @@
           lazy: true,
           easing: 'linear',
           offset: -75,
-          }">Работы</a>
+          }"
+             @click="toggleMenu"
+          >Работы</a>
         </li>
         <li>
           <a href="#" v-scroll-to="{
@@ -27,7 +31,9 @@
           lazy: true,
           easing: 'linear',
           offset: -75,
-          }">Материалы</a>
+          }"
+             @click="toggleMenu"
+          >Материалы</a>
         </li>
       </ul>
     </div>
@@ -37,7 +43,9 @@
           lazy: true,
           easing: 'linear',
           offset: 0,
-          }">
+          }"
+       @click="toggleMenu"
+    >
       <div class="logo">
         <img id="logo_nav" :src=getImage alt="Домострой логотип">
       </div>
@@ -51,7 +59,9 @@
           lazy: true,
           easing: 'linear',
           offset: -75,
-          }">Рабочий процесс</a>
+          }"
+             @click="toggleMenu"
+          >Рабочий процесс</a>
         </li>
         <li>
           <a href="#" v-scroll-to="{
@@ -60,7 +70,9 @@
           lazy: true,
           easing: 'linear',
           offset: -75,
-          }">О нас</a>
+          }"
+             @click="toggleMenu"
+          >О нас</a>
         </li>
         <li>
           <a href="#" v-scroll-to="{
@@ -69,17 +81,18 @@
           lazy: true,
           easing: 'linear',
           offset: -75,
-          }">Контакты</a>
+          }"
+             @click="toggleMenu"
+          >Контакты</a>
         </li>
       </ul>
     </div>
     <div class="toggleButton">
       <i
           class="material-icons"
-          style="color: white"
           @click="toggleMenu"
       >
-        menu
+        {{ getMenuIcon }}
       </i>
     </div>
   </nav>
@@ -118,18 +131,29 @@ export default {
       }
     },
     toggleMenu() {
-      this.$emit('update:isMenuVisible', !this.isMenuVisible);
-      this.$nextTick(() => {
-        this.openMenuOnMobile = this.isMenuVisible ? 'flex' : 'none';
-      })
+      this.menuVisible = !this.menuVisible;
     }
   },
   computed: {
+    menuVisible: {
+      get() {
+        console.log(this.isMenuVisible)
+        return this.isMenuVisible;
+      },
+      set(value) {
+        document.body.style.position = value ? 'fixed' : '';
+        this.openMenuOnMobile = value ? 'flex' : 'none';
+        this.$emit('update:isMenuVisible', value);
+      }
+    },
     getImage() {
       return require(`../assets/images/${this.imagePath}`)
     },
     getMenuVisibility() {
       return `display: ${this.openMenuOnMobile}`
+    },
+    getMenuIcon() {
+      return this.menuVisible ? 'close' : 'menu'
     }
   }
 }
@@ -139,7 +163,7 @@ export default {
 @import "../mixins.scss";
 
 nav {
-  width: 100%;
+  width: 100vw;
   background-color: transparent;
   display: flex;
   position: fixed;
@@ -147,13 +171,21 @@ nav {
   align-items: center;
   transition: 0.6s;
   z-index: 100000;
-  padding: 40px 8vw;
+  padding: 4rem 8vw;
 
   .navItems {
     display: flex;
     justify-items: center;
     flex-grow: 1;
     justify-content: center;
+  }
+
+  .toggleButton {
+    z-index: 999;
+
+    i {
+      color: #FFFFFF;
+    }
   }
 
   ul {
@@ -225,14 +257,21 @@ nav {
       }
     }
   }
+
+  .toggleButton {
+    i {
+      color: #195131;
+    }
+  }
 }
+
 //laptop
 @media screen and (min-width: 960px) and (max-width: 1280px) {
   nav {
     padding: 25px 7vw;
   }
   .navScrolled {
-    padding: 5px 9vw;
+    padding: 5px 8vw;
   }
 }
 
@@ -251,6 +290,9 @@ nav {
     .navItems {
       display: none !important;
     }
+  }
+  .navScrolled {
+    padding: 5px 7vw;
   }
 }
 
@@ -331,6 +373,31 @@ nav {
       padding: 0 0 10vh 0;
       top: 50vh;
     }
+
+  }
+  .navScrolled {
+    .navItems {
+      ul {
+        li {
+          a:hover {
+            background: rgba(32, 99, 62, 0.4);
+          }
+
+          a:active {
+            background: rgba(32, 99, 62, 0.6);
+          }
+        }
+      }
+    }
+
+    #navItemsLeft {
+      background: rgba(255, 255, 255, 1);
+    }
+
+    #navItemsRight {
+      background: rgba(255, 255, 255, 1);
+    }
+
   }
 }
 </style>

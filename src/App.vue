@@ -31,6 +31,7 @@ export default {
 html{
   scroll-behavior: smooth;
   overflow-x: hidden;
+  font-size: 10px;
 }
 
 </style>
