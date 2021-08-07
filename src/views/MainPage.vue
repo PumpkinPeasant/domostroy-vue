@@ -94,7 +94,7 @@ p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   text-decoration: none;
   color: white;
   border-bottom: 2px solid #D68C45;

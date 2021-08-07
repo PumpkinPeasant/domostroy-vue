@@ -72,19 +72,23 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2em 2em 2em 0;
+    padding: 2em;
     font-weight: bold;
     cursor: pointer;
     color: #FFFFFF;
     span{
-      font-size: 20px;
+      font-size: 3rem;
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
+      display: flex;
+      align-items: center;
     }
 
     h3 {
-      font-weight: 500;
-      font-size: 20px;
+      font-family: "Yeseva One", serif;
+      font-size: 3.6rem;
+      font-weight: 400;
+      letter-spacing: 0.05vw;
     }
 
     &:hover {
@@ -93,6 +97,7 @@ input {
 
     &::after {
       content: "\276F";
+      font-size: 1.8rem;
       width: 1em;
       height: 1em;
       text-align: center;
@@ -114,7 +119,10 @@ input {
     border-bottom: 1px solid #628A73;
     color: white;
     p{
-      font-size: 16px;
+      font-size: 2rem;
+    }
+    p, .moreTextButton{
+      margin-left: calc(2rem + 4rem + 6rem);
     }
 
   }

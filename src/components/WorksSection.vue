@@ -32,13 +32,16 @@ export default {
           active: true,
           images: [
             {
-              path: 'house1.jpg',
+              path: 'works_facades_1.jpg',
             },
             {
-              path: 'house1.jpg',
+              path: 'works_facades_2.jpg',
             },
             {
-              path: 'house1.jpg',
+              path: 'works_facades_3.jpg',
+            },
+            {
+              path: 'works_facades_4.jpg',
             }
           ],
         },
@@ -50,14 +53,20 @@ export default {
           active: false,
           images: [
             {
-              path: 'works_facades_1.jpg',
+              path: 'works_roofing_1.jpg',
             },
             {
-              path: 'works_facades_1.jpg',
+              path: 'works_roofing_2.jpg',
             },
             {
-              path: 'works_facades_1.jpg',
-            }
+              path: 'works_roofing_3.jpg',
+            },
+            {
+              path: 'works_roofing_4.jpg',
+            },
+            {
+              path: 'works_roofing_5.jpg',
+            },
           ],
         },
         {
@@ -69,14 +78,20 @@ export default {
           active: false,
           images: [
             {
-              path: '',
+              path: 'works_fence_1.jpg',
             },
             {
-              path: '',
+              path: 'works_fence_2.jpg',
             },
             {
-              path: '',
-            }
+              path: 'works_fence_3.jpg',
+            },
+            {
+              path: 'works_fence_4.jpg',
+            },
+            {
+              path: 'works_fence_5.jpg',
+            },
           ],
         },
       ],
@@ -105,7 +120,14 @@ section {
   }
 
   .content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    grid-gap: 15rem;
+
+    .sectionInfo{
+      display: flex;
+      align-items: center;
+    }
   }
 }
 </style>
