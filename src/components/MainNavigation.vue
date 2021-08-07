@@ -5,7 +5,7 @@
         <li>
           <a href="#" v-scroll-to="{
           el: '#building',
-          duration: 200,
+          duration: this.scrollDuration,
           lazy: true,
           easing: 'linear',
           offset: 10,
@@ -16,7 +16,7 @@
         <li>
           <a href="#" v-scroll-to="{
           el: '#works',
-          duration: 200,
+          duration: this.scrollDuration,
           lazy: true,
           easing: 'linear',
           offset: -75,
@@ -27,7 +27,7 @@
         <li>
           <a href="#" v-scroll-to="{
           el: '#materials',
-          duration: 200,
+          duration: this.scrollDuration,
           lazy: true,
           easing: 'linear',
           offset: -75,
@@ -39,7 +39,7 @@
     </div>
     <a href="#" v-scroll-to="{
           el: '#home',
-          duration: 200,
+          duration: this.scrollDuration,
           lazy: true,
           easing: 'linear',
           offset: 0,
@@ -55,7 +55,7 @@
         <li>
           <a href="#" v-scroll-to="{
           el: '#workingProcess',
-          duration: 200,
+          duration: this.scrollDuration,
           lazy: true,
           easing: 'linear',
           offset: -75,
@@ -66,7 +66,7 @@
         <li>
           <a href="#" v-scroll-to="{
           el: '#about',
-          duration: 200,
+          duration: this.scrollDuration,
           lazy: true,
           easing: 'linear',
           offset: -75,
@@ -77,7 +77,7 @@
         <li>
           <a href="#" v-scroll-to="{
           el: '#contacts',
-          duration: 200,
+          duration: this.scrollDuration,
           lazy: true,
           easing: 'linear',
           offset: -75,
@@ -136,6 +136,9 @@ export default {
     }
   },
   computed: {
+    scrollDuration() {
+      return this.isLaptop ? 300 : 600;
+    },
     isLaptop() {
       return window.screen.width >= 960;
     },
