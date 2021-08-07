@@ -131,13 +131,13 @@ export default {
       }
     },
     toggleMenu() {
-      if (this.screenWidth <= 959)
+      if (!this.isLaptop)
         this.menuVisible = !this.menuVisible;
     }
   },
   computed: {
-    screenWidth() {
-      return window.screen.width
+    isLaptop() {
+      return window.screen.width >= 960;
     },
     menuVisible: {
       get() {
