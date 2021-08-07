@@ -131,10 +131,14 @@ export default {
       }
     },
     toggleMenu() {
-      this.menuVisible = !this.menuVisible;
+      if (this.screenWidth <= 959)
+        this.menuVisible = !this.menuVisible;
     }
   },
   computed: {
+    screenWidth() {
+      return window.screen.width
+    },
     menuVisible: {
       get() {
         console.log(this.isMenuVisible)
@@ -389,7 +393,6 @@ nav {
         }
       }
     }
-
     #navItemsLeft {
       background: rgba(255, 255, 255, 1);
     }
@@ -397,7 +400,6 @@ nav {
     #navItemsRight {
       background: rgba(255, 255, 255, 1);
     }
-
   }
 }
 </style>

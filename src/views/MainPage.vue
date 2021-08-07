@@ -31,8 +31,6 @@ export default {
       isMenuVisible: false,
     }
   },
-  computed: {
-  },
   components: {
     MainNavigation,
     // Footer,
