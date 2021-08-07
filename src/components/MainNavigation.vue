@@ -144,7 +144,6 @@ export default {
     },
     menuVisible: {
       get() {
-        console.log(this.isMenuVisible)
         return this.isMenuVisible;
       },
       set(value) {
