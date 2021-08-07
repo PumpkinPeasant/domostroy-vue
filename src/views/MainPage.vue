@@ -101,7 +101,10 @@ p {
   color: white;
   border-bottom: 2px solid #D68C45;
   width: fit-content;
-
+  transition: 0.2s;
+  &:hover{
+    padding-bottom: 3px;
+  }
 }
 
 .moreButton:hover {

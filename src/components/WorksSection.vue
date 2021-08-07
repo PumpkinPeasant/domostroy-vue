@@ -1,29 +1,29 @@
 <template>
-<section id="works">
-  <h2>Работы</h2>
-  <div class="content">
-    <div class="sectionInfo">
-      <accordion :section-items.sync="sectionItems"/>
+  <section id="works">
+    <h2>Работы</h2>
+    <div class="content">
+      <div class="sectionInfo">
+        <accordion :section-items.sync="sectionItems"/>
+      </div>
+      <div class="slider">
+        <slider :slider-images.sync="sectionItems[sliderActiveItem].images"/>
+      </div>
     </div>
-    <div class="slider">
-      <slider/>
-    </div>
-  </div>
 
-</section>
+  </section>
 </template>
 
 <script>
 import Accordion from "@/components/workSection/Accordion";
 import Slider from "@/components/workSection/Slider";
+
 export default {
-name: "WorksSection",
+  name: "WorksSection",
   components: {Slider, Accordion},
   data() {
     return {
       sectionItems: [
         {
-          id: 'facades',
           title: 'Фасады',
           text: 'Так же, как и с кровлей, все поставщики дают нам хорошую ' +
               'скидку на закупку необходимого материала для фасадных работ, и' +
@@ -32,18 +32,17 @@ name: "WorksSection",
           active: true,
           images: [
             {
-              path: '',
+              path: 'house1.jpg',
             },
             {
-              path: '',
+              path: 'house1.jpg',
             },
             {
-              path: '',
+              path: 'house1.jpg',
             }
           ],
         },
         {
-          id: 'roofing',
           title: 'Кровля',
           text: 'Монтаж любых видов кровли, сотрудничаем с крупнейшими магазинам, ' +
               'что позволяет сделать покупку максимально выгодной.',
@@ -51,18 +50,17 @@ name: "WorksSection",
           active: false,
           images: [
             {
-              path: '',
+              path: 'works_facades_1.jpg',
             },
             {
-              path: '',
+              path: 'works_facades_1.jpg',
             },
             {
-              path: '',
+              path: 'works_facades_1.jpg',
             }
           ],
         },
         {
-          id: 'fences',
           title: 'Заборы',
           text: 'Основное наше направление по установке заборов, ' +
               'это бюджетный сегмент, заборы, которые может позволить ' +
@@ -83,6 +81,11 @@ name: "WorksSection",
         },
       ],
     }
+  },
+  computed: {
+    sliderActiveItem() {
+      return this.sectionItems.findIndex(item => item.active)
+    }
   }
 }
 </script>
@@ -95,10 +98,13 @@ section {
   background: #195131;
   transition: 500ms linear;
   flex-direction: column;
-  h2{
-    color:#FEE3D9;
+
+  h2 {
+    color: #FEE3D9;
+    padding-bottom: 6vh;
   }
-  .content{
+
+  .content {
     display: flex;
   }
 }

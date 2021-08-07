@@ -2,13 +2,21 @@
   <div class="accordion">
     <div class="tabs">
       <div class="tab" v-for="(item,index) in sectionItems" :key="index">
-        <input type="radio" :id="'item'+index" name="rd">
-        <label class="tab-label" :for="'item'+index">
-          <span>0{{ index }}</span>
-          <h2>{{ item.title }}</h2>
+        <input type="radio" :id="'item'+index" name="rd" :checked="item.active">
+        <label class="tab-label" :for="'item'+index" @click="activateItem(index)">
+          <div class="title">
+            <span>0{{ index+1 }}</span>
+            <h3>{{ item.title }}</h3>
+          </div>
         </label>
         <div class="tab-content">
-          {{ item.text }}
+          <p>{{ item.text }}</p>
+          <a :href="item.link" class="moreTextButton">
+            Подробнее
+            <i class="material-icons">
+              arrow_right_alt
+            </i>
+          </a>
         </div>
       </div>
     </div>
@@ -41,8 +49,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$midnight: #2c3e50;
-$clouds: #ecf0f1;
 
 input {
   position: absolute;
@@ -53,32 +59,36 @@ input {
 .accordion {
   display: flex;
 
-  &:last-child {
-    margin-left: 1em;
-  }
   .tabs {
-    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
-
   }
 }
 
 .tab {
   width: 100%;
-  color: white;
   overflow: hidden;
 
   &-label {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 1em;
-    background: $midnight;
+    padding: 2em 2em 2em 0;
     font-weight: bold;
     cursor: pointer;
-    /* Icon */
+    color: #FFFFFF;
+    span{
+      font-size: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 20px;
+    }
+
     &:hover {
-      background: darken($midnight, 10%);
+      background: #093B20;
     }
 
     &::after {
@@ -88,29 +98,44 @@ input {
       text-align: center;
       transition: all .35s;
     }
+    .title{
+      display: flex;
+      gap: 6rem;
+      span{
+        width: 4rem;
+      }
+    }
   }
 
   &-content {
     max-height: 0;
     padding: 0 1em;
-    color: $midnight;
-    background: white;
     transition: all .35s;
+    border-bottom: 1px solid #628A73;
+    color: white;
+    p{
+      font-size: 16px;
+    }
+
   }
 }
 
 input:checked {
   + .tab-label {
-    background: darken($midnight, 10%);
-
     &::after {
       transform: rotate(90deg);
+    }
+    span{
+      color: #D68C45;
     }
   }
 
   ~ .tab-content {
     max-height: 100vh;
-    padding: 1em;
+    padding: 2em 2em 2em 0;
+    p{
+      padding-bottom: 1em;
+    }
   }
 }
 
