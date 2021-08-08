@@ -7,7 +7,7 @@
     <works-section></works-section>
     <materials-section></materials-section>
     <!--    <about-section/>-->
-    <!--    <contacts-section/>-->
+    <contacts-section/>
     <!--    <Footer></Footer>-->
   </div>
 </template>
@@ -20,6 +20,7 @@ import WorkingProcessSection from '@/components/WorkingProcessSection.vue'
 import ConstructingSection from '@/components/ConstructingSection.vue'
 import WorksSection from '@/components/WorksSection.vue'
 import MaterialsSection from '@/components/MaterialsSection.vue'
+import ContactsSection from "@/components/contactSection/ContactsSection";
 // import AboutSection from '@/components/AboutSection.vue'
 // import Footer from '@/components/Footer.vue'
 
@@ -40,7 +41,7 @@ export default {
     WorksSection,
     MaterialsSection,
     // AboutSection,
-    // ContactsSection,
+    ContactsSection,
 
   },
 }
@@ -88,7 +89,7 @@ p {
   transition: 0.2s;
 }
 
-.moreTextButton{
+.moreTextButton {
   display: flex;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
@@ -151,6 +152,7 @@ p {
       font-size: 1.6rem;
       line-height: 1.8em;
     }
+
     .moreButton {
       font-size: 1.5rem;
       padding: 0.8em 2em;
