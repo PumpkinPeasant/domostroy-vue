@@ -3,10 +3,10 @@
     <h2>Работы</h2>
     <div class="content">
       <div class="sectionInfo">
-        <accordion :section-items.sync="sectionItems"/>
+        <accordion :section-items.sync="sectionItems" @refreshIndex="slideIndex = 0"/>
       </div>
       <div class="slider">
-        <slider :slider-images.sync="sectionItems[sliderActiveItem].images"/>
+        <slider :slider-images.sync="sectionItems[sliderActiveItem].images" :slide-index.sync="slideIndex"/>
       </div>
     </div>
 
@@ -95,6 +95,7 @@ export default {
           ],
         },
       ],
+      slideIndex: 0,
     }
   },
   computed: {

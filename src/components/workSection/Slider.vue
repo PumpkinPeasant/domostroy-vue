@@ -4,11 +4,11 @@
       <img :src="getImageUrl">
       <div class="controls">
         <div class="controlBox">
-            <i class="material-icons" @click="slideIndex === 0 ? slideIndex = sliderImages.length-1 : slideIndex--" >
+            <i class="material-icons" @click="slide === 0 ? slide = sliderImages.length-1 : slide--" >
               arrow_back
             </i>
-          <span>{{slideIndex + 1}}/{{sliderImages.length}}</span>
-          <i class="material-icons" @click="slideIndex === sliderImages.length-1 ? slideIndex = 0 : slideIndex++">
+          <span>{{slide + 1}}/{{sliderImages.length}}</span>
+          <i class="material-icons" @click="slideIndex === sliderImages.length-1 ? slide = 0 : slide++">
             arrow_forward
           </i>
         </div>
@@ -21,17 +21,20 @@
 export default {
   name: "Slider",
   props: {
-    sliderImages: Array
-  },
-  data() {
-    return{
-      slideIndex: 0,
-    }
+    sliderImages: Array,
+    slideIndex: Number,
   },
   computed:{
+    slide: {
+      get() {
+        return this.slideIndex;
+      },
+      set(value) {
+        this.$emit('update:slideIndex', value)
+      }
+    },
     getImageUrl() {
-      console.log(this.sliderImages[this.slideIndex])
-      return require('../../assets/images/slider/'+ this.sliderImages[this.slideIndex].path)
+      return require('../../assets/images/slider/'+ this.sliderImages[this.slide].path)
     },
   },
 }
