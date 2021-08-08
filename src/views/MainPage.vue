@@ -6,7 +6,8 @@
     <constructing-section/>
     <works-section></works-section>
     <materials-section></materials-section>
-    <!--    <about-section/>-->
+    <about-section/>
+    <benefits-section/>
     <contacts-section/>
     <!--    <Footer></Footer>-->
   </div>
@@ -21,7 +22,8 @@ import ConstructingSection from '@/components/ConstructingSection.vue'
 import WorksSection from '@/components/WorksSection.vue'
 import MaterialsSection from '@/components/MaterialsSection.vue'
 import ContactsSection from "@/components/contactSection/ContactsSection";
-// import AboutSection from '@/components/AboutSection.vue'
+import AboutSection from '@/components/AboutSection.vue'
+import BenefitsSection from "@/components/BenefitsSection";
 // import Footer from '@/components/Footer.vue'
 
 export default {
@@ -33,6 +35,7 @@ export default {
     }
   },
   components: {
+    BenefitsSection,
     MainNavigation,
     // Footer,
     MainSection,
@@ -40,7 +43,7 @@ export default {
     ConstructingSection,
     WorksSection,
     MaterialsSection,
-    // AboutSection,
+    AboutSection,
     ContactsSection,
 
   },
