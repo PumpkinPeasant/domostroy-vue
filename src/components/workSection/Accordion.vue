@@ -11,7 +11,7 @@
         </label>
         <div class="tab-content">
           <p>{{ item.text }}</p>
-          <a :href="item.link" class="moreTextButton">
+          <a :href="item.link" class="moreTextButton" target="_blank">
             Подробнее
             <i class="material-icons">
               arrow_right_alt

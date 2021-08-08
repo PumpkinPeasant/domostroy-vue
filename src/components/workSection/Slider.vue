@@ -61,14 +61,14 @@ export default {
       height: 600px;
       top: 30px;
       right: -30px;
-      background-size: cover;
-      background: url("../../assets/images/textures/worksImgDecoration.jpg") ;
+      background: url("../../assets/images/textures/worksImgDecoration.jpg") no-repeat;
+      background-size: 100%;
     }
     .controls{
       position: absolute;
       display: flex;
       justify-content: center;
-      height: 40px;
+      height: 50px;
       max-width: 900px;
       width: 100%;
       bottom: 0;
@@ -93,10 +93,10 @@ export default {
           cursor: pointer;
           transition: 0.4s;
           &:nth-child(1){
-            padding: 0 20px 0 5px;
+            padding: 0 30px 0 5px;
           }
           &:nth-child(3){
-            padding: 0 5px 0 20px;
+            padding: 0 5px 0 30px;
           }
           &:hover{
             font-size: 2.5rem;

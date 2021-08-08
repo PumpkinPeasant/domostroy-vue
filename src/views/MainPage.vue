@@ -5,7 +5,7 @@
     <working-process-section/>
     <constructing-section/>
     <works-section></works-section>
-    <!--    <materials-section></materials-section>-->
+    <materials-section></materials-section>
     <!--    <about-section/>-->
     <!--    <contacts-section/>-->
     <!--    <Footer></Footer>-->
@@ -19,7 +19,7 @@ import MainSection from '@/components/MainSection.vue'
 import WorkingProcessSection from '@/components/WorkingProcessSection.vue'
 import ConstructingSection from '@/components/ConstructingSection.vue'
 import WorksSection from '@/components/WorksSection.vue'
-// import MaterialsSection from '@/components/MaterialsSection.vue'
+import MaterialsSection from '@/components/MaterialsSection.vue'
 // import AboutSection from '@/components/AboutSection.vue'
 // import Footer from '@/components/Footer.vue'
 
@@ -38,7 +38,7 @@ export default {
     WorkingProcessSection,
     ConstructingSection,
     WorksSection,
-    // MaterialsSection,
+    MaterialsSection,
     // AboutSection,
     // ContactsSection,
 
@@ -100,6 +100,8 @@ p {
   border-bottom: 2px solid #D68C45;
   width: fit-content;
   transition: 0.2s;
+  cursor: pointer;
+  user-select: none;
   &:hover{
     padding-bottom: 3px;
   }
