@@ -43,13 +43,11 @@ export default {
 <style scoped lang="scss">
 .slider{
   position: relative;
-  width: 100%;
-  max-width: 900px;
   z-index: 1;
   .slide{
+    width: 45vw;
+    height: 34vw;
     position: relative;
-    max-width: 100%;
-    height: 600px;
     img{
       width: 100%;
       height: 100%;
@@ -60,8 +58,8 @@ export default {
       content: "";
       position: absolute;
       width: 100%;
-      max-width: 900px;
-      height: 600px;
+      max-width: 45vw;
+      height: 34vw;
       top: 30px;
       right: -30px;
       background: url("../../assets/images/textures/worksImgDecoration.jpg") no-repeat;
@@ -71,7 +69,8 @@ export default {
       position: absolute;
       display: flex;
       justify-content: center;
-      height: 50px;
+      max-height: 50px;
+      height: 10%;
       max-width: 900px;
       width: 100%;
       bottom: 0;
@@ -111,6 +110,80 @@ export default {
       }
     }
   }
+}
+
+@media screen and (min-width: 959px) and (max-width: 1280px) {
+  .slider{
+    .slide{
+      img{
+      }
+      &::before{
+        top: 20px;
+        right: -20px;
+      }
+      .controls{
+        .controlBox{
+          span{
+            font-size: 1.4rem;
+          }
+          i{
+            font-size: 1.8rem;
+            &:nth-child(1){
+              padding: 0 20px 0 5px;
+            }
+            &:nth-child(3){
+              padding: 0 5px 0 20px;
+            }
+            &:hover{
+              font-size: 2rem;
+            }
+            &:active{
+              font-size: 2.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  .slider{
+    .slide{
+      img{
+      }
+      &::before{
+        top: 17px;
+        right: -17px;
+      }
+      .controls{
+        .controlBox{
+          span{
+            font-size: 1.2rem;
+          }
+          i{
+            font-size: 1.5rem;
+            &:nth-child(1){
+              padding: 0 15px 0 5px;
+            }
+            &:nth-child(3){
+              padding: 0 5px 0 15px;
+            }
+            &:hover{
+              font-size: 1.6rem;
+            }
+            &:active{
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+
 }
 
 </style>

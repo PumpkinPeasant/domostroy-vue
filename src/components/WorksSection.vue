@@ -123,11 +123,41 @@ section {
   .content {
     display: grid;
     grid-template-columns: 5fr 7fr;
-    grid-gap: 15rem;
+    grid-gap: 13rem;
 
     .sectionInfo{
       display: flex;
       align-items: center;
+    }
+  }
+}
+
+@media screen and (min-width: 959px) and (max-width: 1280px) {
+  section {
+    height: 110vh;
+    .content {
+      grid-gap: 10rem;
+
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  section {
+    height: 105vh;
+    .content {
+      grid-gap: 7rem;
+
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  section {
+    height: 150vh;
+    .content {
+      display: flex;
+      flex-direction: column;
     }
   }
 }

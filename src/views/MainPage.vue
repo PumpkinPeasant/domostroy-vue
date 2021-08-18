@@ -9,7 +9,7 @@
     <about-section/>
     <benefits-section/>
     <contacts-section/>
-    <!--    <Footer></Footer>-->
+    <Footer></Footer>
   </div>
 </template>
 
@@ -21,10 +21,10 @@ import WorkingProcessSection from '@/components/WorkingProcessSection.vue'
 import ConstructingSection from '@/components/ConstructingSection.vue'
 import WorksSection from '@/components/WorksSection.vue'
 import MaterialsSection from '@/components/MaterialsSection.vue'
-import ContactsSection from "@/components/contactSection/ContactsSection";
+import ContactsSection from "@/components/ContactsSection";
 import AboutSection from '@/components/AboutSection.vue'
 import BenefitsSection from "@/components/BenefitsSection";
-// import Footer from '@/components/Footer.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'App',
@@ -37,7 +37,7 @@ export default {
   components: {
     BenefitsSection,
     MainNavigation,
-    // Footer,
+    Footer,
     MainSection,
     WorkingProcessSection,
     ConstructingSection,
@@ -130,11 +130,17 @@ p {
   section {
     padding: 10vh 8vw;
   }
+  .moreTextButton {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
   section {
     padding: 9vh 7vw;
+  }
+  .moreTextButton {
+    font-size: 0.8rem;
   }
 }
 
@@ -160,6 +166,11 @@ p {
       font-size: 1.5rem;
       padding: 0.8em 2em;
     }
+
+    .moreTextButton {
+      font-size: 0.8rem;
+    }
   }
+
 }
 </style>

@@ -87,7 +87,6 @@ input {
 
     h3 {
       font-family: "Yeseva One", serif;
-      font-size: 3.6rem;
       font-weight: 400;
       letter-spacing: 0.05vw;
     }
@@ -119,9 +118,6 @@ input {
     transition: all .35s;
     border-bottom: 1px solid #628A73;
     color: white;
-    p{
-      font-size: 2rem;
-    }
     p, .moreTextButton{
       margin-left: calc(2rem + 4rem + 6rem);
     }
@@ -148,5 +144,100 @@ input:checked {
   }
 }
 
+@media screen and (min-width: 959px) and (max-width: 1280px) {
+  .tab {
+    &-label {
+      padding: 1em;
+      &::after {
+        font-size: 1.4rem;
+      }
+      .title{
+        gap: 4rem;
+        span{
+          font-size: 2vw;
+          width: 2rem;
+        }
+      }
+    }
 
+    &-content {
+      p, .moreTextButton{
+        margin-left: calc(1rem + 4rem + 2rem);
+      }
+
+    }
+  }
+
+  input:checked {
+    + .tab-label {
+      &::after {
+        transform: rotate(90deg);
+      }
+      span{
+        color: #D68C45;
+      }
+    }
+
+    ~ .tab-content {
+      max-height: 100vh;
+      padding: 1.3em 1.3em 1.3em 0;
+      p{
+        padding-bottom: 1em;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  .tab {
+    &-label {
+      padding: 1em;
+      &::after {
+        font-size: 1.4rem;
+      }
+      .title{
+        gap: 4rem;
+        span{
+          font-size: 2vw;
+          width: 2rem;
+        }
+      }
+    }
+
+    &-content {
+      p, .moreTextButton{
+        margin-left: calc(1rem + 4rem + 2rem);
+      }
+      .moreTextButton{
+        i{
+          font-size: 1.2rem;
+        }
+      }
+
+    }
+  }
+
+  input:checked {
+    + .tab-label {
+      &::after {
+        transform: rotate(90deg);
+      }
+      span{
+        color: #D68C45;
+      }
+    }
+
+    ~ .tab-content {
+      max-height: 100vh;
+      padding: 1.3em 1.3em 1.3em 0;
+      p{
+        padding-bottom: 1em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+
+}
 </style>

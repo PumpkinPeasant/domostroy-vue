@@ -1,7 +1,11 @@
 <template>
   <section id="contacts">
-    Контакты
-    <yandex-map :coords="coords">
+    <h2>Контакты</h2>
+    <yandex-map
+        :coords="coords"
+        :controls="controls"
+        :scroll-zoom="false"
+        style="padding: 0 !important; border: #18ffff 2px solid; height: 100%" >
       <yandex-map-marker
           marker-id="1"
           :coords="coords"
@@ -18,7 +22,8 @@ import ContactPopup from "@/components/contactSection/ContactPopup";
 export default {
   name: "ContactsSection",
   data: () => ({
-    coords: [64.557177, 39.859165]
+    coords: [64.557177, 39.859165],
+    controls: ['zoomControl','geolocationControl'],
   }),
   components: {
     ContactPopup,
@@ -28,14 +33,18 @@ export default {
 }
 </script>
 
-<style scoped>
-section {
+<style scoped lang="scss">
+#contacts {
   display: flex;
-  padding: 10vh;
   position: relative;
+  padding: 0;
   width: 100%;
-  height: 115vh;
+  height: 100vh;
   background: #FFEFE9 fixed;
   transition: 500ms linear;
+  flex-direction: column;
+  h2{
+    padding: 6vh 8vw;
+  }
 }
 </style>
