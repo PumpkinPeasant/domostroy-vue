@@ -1,5 +1,7 @@
 <template>
   <section id="materials">
+    <img class="decorationTree" src="../assets/images/trees/tree3.svg"  alt="">
+    <img class="decorationTree2" src="../assets/images/trees/tree4_cut.svg"  alt="">
     <h2>Материалы</h2>
     <div class="content">
       <div
@@ -100,14 +102,10 @@ section {
         margin-top: 50px;
       }
 
-      &Active {
-        background: #18ffff;
-        background-blend-mode: multiply;
-      }
     }
 
     #material1 {
-      background: url("../assets/images/materialsImg1.jpg"), rgba(25, 81, 49, .25) no-repeat;
+      background: url("../assets/images/materialsImg1.jpg") no-repeat, rgba(25, 81, 49, .25);
       background-blend-mode: multiply;
       background-size: 100%;
       &Active{
@@ -119,7 +117,7 @@ section {
     }
 
     #material2 {
-      background: url("../assets/images/materialsImg2.jpg"), rgba(25, 81, 49, .25) no-repeat;
+      background: url("../assets/images/materialsImg2.jpg") no-repeat, rgba(25, 81, 49, .25);
       background-blend-mode: multiply;
       background-size: 100%;
       &Active{
@@ -131,7 +129,7 @@ section {
     }
 
     #material3 {
-      background: url("../assets/images/materialsImg3.jpg"), rgba(25, 81, 49, .25) no-repeat;
+      background: url("../assets/images/materialsImg3.jpg") no-repeat, rgba(25, 81, 49, .25) no-repeat;
       background-blend-mode: multiply;
       background-size: 100%;
       &Active{
@@ -142,29 +140,27 @@ section {
       }
     }
   }
-  &::before{
-    content: "";
+
+  .decorationTree{
     position: absolute;
-    width: 100%;
-    height: 100%;
-    right: -40vw;
-    bottom: 50vh;
+    height: 100vh;
+    top:-50vh;
+    right: 0;
+    opacity: 0.4;
     mix-blend-mode: overlay;
-    background: url('../assets/images/trees/tree3.svg') no-repeat;
-    opacity: 0.3;
   }
-  &::after{
+
+  .decorationTree2{
     z-index: 1;
-    content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 60vw;
-    bottom: -100vh;
+    height: 100vh;
+    bottom: -70vh;
+    right: 0;
+    opacity: 0.4;
     mix-blend-mode: overlay;
-    background: url('../assets/images/trees/tree4.svg') no-repeat;
-    opacity: 0.3;
   }
+
+
 }
 
 .textAnimation-enter-active, .textAnimation-leave-active {

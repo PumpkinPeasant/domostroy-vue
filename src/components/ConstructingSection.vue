@@ -1,6 +1,6 @@
 <template>
   <section id="building">
-<img class="decorationTree" src="../assets/images/trees/tree1_cut.svg"  alt="">
+    <img class="decorationTree" src="../assets/images/trees/tree1_cut.svg" alt="">
     <div class="title">
       <h2>Строительство</h2>
     </div>
@@ -123,7 +123,7 @@ section {
 #bathImg1{
   position: relative;
   z-index: 2;
-  box-shadow: 0 4px 29px -4px rgba(146,66,49,.5) ;
+  box-shadow: 0 4px 29px -4px rgba(146,66,49,.5);
 }
 #bathImg2{
   position: relative;
@@ -136,9 +136,10 @@ section {
 }
 .decorationTree{
   position: absolute;
-  height: 90vh;
+  height: 100vh;
   top:-50vh;
   right: 0;
+  mix-blend-mode: overlay;
 }
 
 @media screen and (min-width: 959px) and (max-width: 1280px) {
