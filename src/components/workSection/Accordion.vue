@@ -6,11 +6,11 @@
         <label class="tab-label" :for="'item'+index" @click="activateItem(index)">
           <div class="title">
             <span>0{{ index+1 }}</span>
-            <h3>{{ item.title }}</h3>
+            <h3 class="heading-1-text">{{ item.title }}</h3>
           </div>
         </label>
         <div class="tab-content">
-          <p>{{ item.text }}</p>
+          <p class="primary-text">{{ item.text }}</p>
           <a :href="item.link" class="moreTextButton" target="_blank">
             Подробнее
             <i class="material-icons">

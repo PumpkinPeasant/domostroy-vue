@@ -1,6 +1,6 @@
 <template>
   <section id="works">
-    <h2>Работы</h2>
+    <h2 class="heading-2-text">Работы</h2>
     <div class="content">
       <div class="sectionInfo">
         <accordion :section-items.sync="sectionItems" @refreshIndex="slideIndex = 0"/>

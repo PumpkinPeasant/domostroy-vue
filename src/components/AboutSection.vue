@@ -1,13 +1,13 @@
 <template>
   <section id="about">
-    <h2>
+    <h2 class="heading-2-text">
       О нас
     </h2>
     <div class="content">
-      <h3>
+      <h3 class="heading-1-text">
         Более <span>100 </span>договоров ежегодно!
       </h3>
-      <p>
+      <p class="primary-text">
         В <span>2007 </span>году Мы открылись в городе Северодвинск,
         став одними из главных конкурентов местных компаний,
         осуществляющих строительство типовых домов из дерева.

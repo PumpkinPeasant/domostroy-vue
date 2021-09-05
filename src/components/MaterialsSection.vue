@@ -2,16 +2,16 @@
   <section id="materials">
     <img class="decorationTree" src="../assets/images/trees/tree3.svg"  alt="">
     <img class="decorationTree2" src="../assets/images/trees/tree4_cut.svg"  alt="">
-    <h2>Материалы</h2>
+    <h2 class="heading-2-text">Материалы</h2>
     <div class="content">
       <div
           class="materialBox"
           :id="item.active ? 'material'+(index+1)+'Active' : 'material'+(index+1)"
           v-for="(item,index) in materialItems"
           :key="index">
-        <h3>{{ item.title }}</h3>
+        <h3 class="heading-1-text">{{ item.title }}</h3>
         <transition name="textAnimation">
-          <p v-if="item.active">{{ item.text }}</p>
+          <p class="primary-text" v-if="item.active">{{ item.text }}</p>
         </transition>
         <transition name="moreButtonAnimation" appear>
           <a class="moreTextButton" @click="item.active = !item.active">
