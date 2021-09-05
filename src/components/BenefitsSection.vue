@@ -1,6 +1,8 @@
 <template>
   <section>
-    <div class="parallaxImage"></div>
+    <ClientOnly>
+      <div class="parallaxImage lazy-bg"></div>
+    </ClientOnly>
   </section>
 </template>
 
@@ -16,14 +18,16 @@ section {
   padding: 0;
   height: 90vh;
   flex-direction: column;
-  .parallaxImage{
+  .parallaxImage {
     z-index: 2;
-    background-image: url("../assets/images/aboutImg1.jpg");
     height: 100%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .parallaxImage.lazy-bg-loaded {
+    background-image: url("../assets/images/aboutImg1.jpg");
   }
 }
 </style>

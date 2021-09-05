@@ -3,95 +3,120 @@
     <div class="navItems" id="navItemsLeft" :style="getMenuVisibility">
       <ul>
         <li>
-          <a href="#" v-scroll-to="{
-          el: '#building',
-          duration: this.scrollDuration,
-          lazy: true,
-          easing: 'linear',
-          offset: 10,
-          }"
-             @click="toggleMenu"
-          >Строительство</a>
+          <a
+            href="#"
+            v-scroll-to="{
+              el: '#building',
+              duration: this.scrollDuration,
+              lazy: true,
+              easing: 'linear',
+              offset: 10,
+            }"
+            @click="toggleMenu"
+            >Строительство</a
+          >
         </li>
         <li>
-          <a href="#" v-scroll-to="{
-          el: '#works',
-          duration: this.scrollDuration,
-          lazy: true,
-          easing: 'linear',
-          offset: -75,
-          }"
-             @click="toggleMenu"
-          >Работы</a>
+          <a
+            href="#"
+            v-scroll-to="{
+              el: '#works',
+              duration: this.scrollDuration,
+              lazy: true,
+              easing: 'linear',
+              offset: -75,
+            }"
+            @click="toggleMenu"
+            >Работы</a
+          >
         </li>
         <li>
-          <a href="#" v-scroll-to="{
-          el: '#materials',
-          duration: this.scrollDuration,
-          lazy: true,
-          easing: 'linear',
-          offset: -75,
-          }"
-             @click="toggleMenu"
-          >Материалы</a>
+          <a
+            href="#"
+            v-scroll-to="{
+              el: '#materials',
+              duration: this.scrollDuration,
+              lazy: true,
+              easing: 'linear',
+              offset: -75,
+            }"
+            @click="toggleMenu"
+            >Материалы</a
+          >
         </li>
       </ul>
     </div>
-    <a href="#" v-scroll-to="{
-          el: '#home',
-          duration: this.scrollDuration,
-          lazy: true,
-          easing: 'linear',
-          offset: 0,
-          }"
-       @click="toggleMenu"
+    <a
+      href="#"
+      v-scroll-to="{
+        el: '#home',
+        duration: this.scrollDuration,
+        lazy: true,
+        easing: 'linear',
+        offset: 0,
+      }"
+      @click="toggleMenu"
     >
       <div class="logo">
-        <img id="logo_nav" :src=getImage alt="Домострой логотип">
+        <ClientOnly>
+          <img
+            class="lazy"
+            loading="lazy"
+            id="logo_nav"
+            :src="getImage"
+            alt="Домострой логотип"
+          />
+        </ClientOnly>
       </div>
     </a>
     <div class="navItems" id="navItemsRight" :style="getMenuVisibility">
       <ul>
         <li>
-          <a href="#" v-scroll-to="{
-          el: '#workingProcess',
-          duration: this.scrollDuration,
-          lazy: true,
-          easing: 'linear',
-          offset: -75,
-          }"
-             @click="toggleMenu"
-          >Рабочий процесс</a>
+          <a
+            href="#"
+            v-scroll-to="{
+              el: '#workingProcess',
+              duration: this.scrollDuration,
+              lazy: true,
+              easing: 'linear',
+              offset: -75,
+            }"
+            @click="toggleMenu"
+            >Рабочий процесс</a
+          >
         </li>
         <li>
-          <a href="#" v-scroll-to="{
-          el: '#about',
-          duration: this.scrollDuration,
-          lazy: true,
-          easing: 'linear',
-          offset: -75,
-          }"
-             @click="toggleMenu"
-          >О нас</a>
+          <a
+            href="#"
+            v-scroll-to="{
+              el: '#about',
+              duration: this.scrollDuration,
+              lazy: true,
+              easing: 'linear',
+              offset: -75,
+            }"
+            @click="toggleMenu"
+            >О нас</a
+          >
         </li>
         <li>
-          <a href="#" v-scroll-to="{
-          el: '#contacts',
-          duration: this.scrollDuration,
-          lazy: true,
-          easing: 'linear',
-          offset: -75,
-          }"
-             @click="toggleMenu"
-          >Контакты</a>
+          <a
+            href="#"
+            v-scroll-to="{
+              el: '#contacts',
+              duration: this.scrollDuration,
+              lazy: true,
+              easing: 'linear',
+              offset: -75,
+            }"
+            @click="toggleMenu"
+            >Контакты</a
+          >
         </li>
       </ul>
     </div>
     <div class="toggleButton">
-      <i
-          class="material-icons"
-          @click="toggleMenu"
-      >
+      <i class="material-icons" @click="toggleMenu">
         {{ getMenuIcon }}
       </i>
     </div>
@@ -99,7 +124,6 @@
 </template>
 
 <script>
-
 export default {
   name: "MainNavigation",
   props: {
@@ -109,31 +133,30 @@ export default {
   },
   data() {
     return {
-      navClass: '',
-      imagePath: 'logo_white.svg',
-      openMenuOnMobile: '',
-    }
+      navClass: "",
+      imagePath: "logo_white.svg",
+      openMenuOnMobile: "",
+    };
   },
   created() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
   },
   destroyed() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
     handleScroll(event) {
       if (event && window.scrollY > 0) {
-        this.navClass = 'navScrolled'
-        this.imagePath = 'logo_color.svg';
+        this.navClass = "navScrolled";
+        this.imagePath = "logo_color.svg";
       } else {
-        this.navClass = ''
-        this.imagePath = 'logo_white.svg';
+        this.navClass = "";
+        this.imagePath = "logo_white.svg";
       }
     },
     toggleMenu() {
-      if (!this.isLaptop)
-        this.menuVisible = !this.menuVisible;
-    }
+      if (!this.isLaptop) this.menuVisible = !this.menuVisible;
+    },
   },
   computed: {
     scrollDuration() {
@@ -147,22 +170,22 @@ export default {
         return this.isMenuVisible;
       },
       set(value) {
-        document.body.style.position = value ? 'fixed' : '';
-        this.openMenuOnMobile = value ? 'flex' : 'none';
-        this.$emit('update:isMenuVisible', value);
-      }
+        document.body.style.position = value ? "fixed" : "";
+        this.openMenuOnMobile = value ? "flex" : "none";
+        this.$emit("update:isMenuVisible", value);
+      },
     },
     getImage() {
-      return require(`../assets/images/${this.imagePath}`)
+      return require(`../assets/images/${this.imagePath}`);
     },
     getMenuVisibility() {
-      return `display: ${this.openMenuOnMobile}`
+      return `display: ${this.openMenuOnMobile}`;
     },
     getMenuIcon() {
-      return this.menuVisible ? 'close' : 'menu'
-    }
-  }
-}
+      return this.menuVisible ? "close" : "menu";
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -190,7 +213,7 @@ nav {
     z-index: 999;
 
     i {
-      color: #FFFFFF;
+      color: #ffffff;
     }
   }
 
@@ -205,7 +228,7 @@ nav {
       display: flex;
       font-family: Prata, sans-serif;
       position: relative;
-      color: #FDFDF9;
+      color: #fdfdf9;
       @include fluid-type(960px, 1900px, 13px, 20px);
       list-style: none;
       cursor: pointer;
@@ -213,14 +236,14 @@ nav {
 
       a {
         position: relative;
-        color: #FDFDF9;
+        color: #fdfdf9;
         text-decoration: none;
         transition: 0.4s;
         border-bottom: 2px solid transparent;
       }
 
       a:hover {
-        border-bottom: 2px solid #D68C45;
+        border-bottom: 2px solid #d68c45;
       }
     }
   }
@@ -325,7 +348,6 @@ nav {
           padding-left: 5vw;
         }
       }
-
     }
 
     .toggleButton {
@@ -379,7 +401,6 @@ nav {
       padding: 0 0 10vh 0;
       top: 50vh;
     }
-
   }
   .navScrolled {
     .navItems {

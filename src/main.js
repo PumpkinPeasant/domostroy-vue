@@ -4,6 +4,7 @@ import store from "./store";
 import router from "./router";
 import VueScrollTo from "vue-scrollto";
 import YmapPlugin from "vue-yandex-maps";
+import yall from "yall-js";
 
 import "material-icons/iconfont/material-icons.scss";
 import "./styles.scss";
@@ -11,6 +12,14 @@ import "./styles.scss";
 Vue.config.productionTip = false;
 
 export default function(Vue, appOptions) {
+  if (appOptions.isClient) {
+    document.addEventListener("DOMContentLoaded", () =>
+      yall({
+        observeChanges: true,
+      })
+    );
+  }
+
   Vue.use(YmapPlugin, {
     apiKey: "e037fe7c-71f4-40ba-adfa-a0943ab32f82",
     lang: "ru_RU",

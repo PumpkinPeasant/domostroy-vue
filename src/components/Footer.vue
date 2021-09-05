@@ -1,25 +1,27 @@
 <template>
   <div class="footer">
     <div class="content">
-      <img alt="" src="../assets/images/logo_color.svg">
+      <ClientOnly>
+        <img alt="" class="lazy" src="../assets/images/logo_color.svg" />
+      </ClientOnly>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-name: "Footer"
-}
+  name: "Footer",
+};
 </script>
 
 <style scoped lang="scss">
-.footer{
+.footer {
   position: relative;
   display: flex;
   height: 20vh;
   width: 100%;
-  background: #FFEFE9;
-  .content{
+  background: #ffefe9;
+  .content {
     z-index: 15;
     width: 100%;
     height: 100%;
@@ -27,7 +29,7 @@ name: "Footer"
     justify-content: space-between;
     align-items: center;
 
-    img{
+    img {
       width: 15%;
     }
   }

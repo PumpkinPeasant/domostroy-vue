@@ -1,32 +1,52 @@
 <template>
   <section id="workingProcess">
     <div class="sectionInfo">
-      <h2 class="heading-2-text">
-        Рабочий процесс
-      </h2>
+      <h2 class="heading-2-text">Рабочий процесс</h2>
       <h3 class="heading-1-text">Не знаете с чего начать?</h3>
-      <p class="primary-text">Хотите дом, баню или просто какую то постройку,
-        но не знаете с чего начать? Не проблема!
-        Достаточно нарисовать небольшой набросок
-        и можно смело обращаться к нам, а наши специалисты доработают
-        Вашу идею, помогут и подскажут Вам, как правильнее осуществить
-        Вашу мечту, а так же на чем можно сэкономить!</p>
-      <a target="_blank" href="https://vk.com/domostroi_29" class="moreButton">Подробнее</a>
+      <p class="primary-text">
+        Хотите дом, баню или просто какую то постройку, но не знаете с чего
+        начать? Не проблема! Достаточно нарисовать небольшой набросок и можно
+        смело обращаться к нам, а наши специалисты доработают Вашу идею, помогут
+        и подскажут Вам, как правильнее осуществить Вашу мечту, а так же на чем
+        можно сэкономить!
+      </p>
+      <a target="_blank" href="https://vk.com/domostroi_29" class="moreButton"
+        >Подробнее</a
+      >
     </div>
-    <div class="sectionSide">
-      <img class="sectionSideImg" src="../assets/images/processImg1.jpg" alt="">
-    </div>
-    <div class="sectionInfoImgDiv">
-      <img class="sectionInfoImg" id="sectionInfoImg1" src="../assets/images/processImg2.jpg" alt="">
-      <img class="sectionInfoImg" id="sectionInfoImg2" src="../assets/images/textures/processImgDecoration.jpg" alt="">
-    </div>
+    <ClientOnly>
+      <div class="sectionSide">
+        <img
+          loading="lazy"
+          class="sectionSideImg lazy"
+          src="../assets/images/processImg1.jpg"
+          alt=""
+        />
+      </div>
+      <div class="sectionInfoImgDiv">
+        <img
+          loading="lazy"
+          class="sectionInfoImg lazy"
+          id="sectionInfoImg1"
+          src="../assets/images/processImg2.jpg"
+          alt=""
+        />
+        <img
+          loading="lazy"
+          class="sectionInfoImg lazy"
+          id="sectionInfoImg2"
+          src="../assets/images/textures/processImgDecoration.jpg"
+          alt=""
+        />
+      </div>
+    </ClientOnly>
   </section>
 </template>
 
 <script>
 export default {
-  name: "WorkingProcessSection"
-}
+  name: "WorkingProcessSection",
+};
 </script>
 
 <style scoped lang="scss">
@@ -34,11 +54,11 @@ section {
   justify-content: space-between;
   width: 100%;
   height: 115vh;
-  background: #FFEFE9;
+  background: #ffefe9;
   transition: 500ms linear;
 
   h2 {
-    color: #D68C45;
+    color: #d68c45;
   }
 
   h3 {
@@ -48,7 +68,7 @@ section {
   }
 
   p {
-    color: #20633E;
+    color: #20633e;
     padding: 1vh 0 3vh 0;
     line-height: 1.5em;
   }
@@ -87,7 +107,7 @@ section {
 #sectionInfoImg1 {
   z-index: 2;
   bottom: -10vw;
-  box-shadow: 0 4px 29px -4px rgba(146, 66, 49, .5);
+  box-shadow: 0 4px 29px -4px rgba(146, 66, 49, 0.5);
 }
 
 #sectionInfoImg2 {
@@ -105,12 +125,12 @@ section {
   width: auto;
   height: 100%;
   max-height: 90vh;
-  box-shadow: 0 4px 29px -4px rgba(146, 66, 49, .5);
+  box-shadow: 0 4px 29px -4px rgba(146, 66, 49, 0.5);
   z-index: 3;
 }
 
 .moreButton {
-  color: #FDFDF9;
+  color: #fdfdf9;
 }
 
 @media screen and (min-width: 959px) and (max-width: 1280px) {
@@ -138,7 +158,6 @@ section {
       max-height: 65vh;
     }
 
-
     .sectionInfoImg {
       width: 33vw;
     }
@@ -154,7 +173,7 @@ section {
       padding-bottom: 3em;
       line-height: 1.8em;
     }
-    .sectionInfo{
+    .sectionInfo {
       width: 100%;
     }
 
@@ -174,8 +193,6 @@ section {
         display: none;
       }
     }
-
-
   }
 }
 </style>

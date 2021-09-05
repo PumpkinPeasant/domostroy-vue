@@ -1,19 +1,25 @@
 <template>
-  <section id="home">
-    <div class="arrow">
-      <a
-        href="#"
-        v-scroll-to="{
-          el: '#workingProcess',
-          duration: 200,
-          lazy: true,
-          easing: 'linear',
-          offset: -75,
-        }"
-        ><img class="arrowImg" src="../assets/images/icons/arrow.svg" alt=""/>
+  <ClientOnly>
+    <section class="lazy-bg" id="home">
+      <div class="arrow">
+        <a
+          href="#"
+          v-scroll-to="{
+            el: '#workingProcess',
+            duration: 200,
+            lazy: true,
+            easing: 'linear',
+            offset: -75,
+          }"
+          ><img
+            class="arrowImg lazy"
+            src="../assets/images/icons/arrow.svg"
+            loading="lazy"
+          />
         </a>
-    </div>
-  </section>
+      </div>
+    </section>
+  </ClientOnly>
 </template>
 
 <script>
@@ -30,7 +36,6 @@ section {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url("../assets/images/house2.jpg"), rgba(0, 0, 0, 0.5) fixed;
   background-blend-mode: overlay;
   background-size: cover;
   align-items: flex-end;
@@ -54,6 +59,10 @@ section {
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
     top: -1vw;
   }
+}
+
+section.lazy-bg-loaded  {
+  background: url("../assets/images/house2.jpg"), rgba(0, 0, 0, 0.5) fixed;
 }
 
 @media screen and (min-width: 959px) and (max-width: 1280px) {
