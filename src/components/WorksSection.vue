@@ -6,7 +6,9 @@
         <accordion :section-items.sync="sectionItems" @refreshIndex="slideIndex = 0"/>
       </div>
       <div class="slider">
-        <slider :slider-images.sync="sectionItems[sliderActiveItem].images" :slide-index.sync="slideIndex"/>
+        <ClientOnly>
+          <slider :slider-images.sync="sectionItems[sliderActiveItem].images" :slide-index.sync="slideIndex"/>
+        </ClientOnly>
       </div>
     </div>
 

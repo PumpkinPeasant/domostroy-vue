@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import Home from '@/views/ServiceUnavailable'
-import Home from '@/views/MainPage'
+import MainPage from '@/pages/Index.vue'
 //import Store from '@/store'
 //import MainSection from '@/components/MainSection'
 //import WorkingProcessSection from '@/components/WorkingProcessSection'
@@ -12,7 +12,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: MainPage
   },
 ]
 

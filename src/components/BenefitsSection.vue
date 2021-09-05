@@ -16,7 +16,7 @@ section {
   padding: 0;
   height: 90vh;
   flex-direction: column;
-  .parallaxImage{
+  .parallaxImage {
     background-image: url("../assets/images/aboutImg1.jpg");
     height: 100%;
     background-attachment: fixed;
