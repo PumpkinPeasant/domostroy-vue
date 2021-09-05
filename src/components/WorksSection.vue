@@ -110,7 +110,7 @@ export default {
 section {
   position: relative;
   width: 100%;
-  height: 115vh;
+  height: 100vh;
   background: #195131;
   transition: 500ms linear;
   flex-direction: column;
@@ -118,9 +118,11 @@ section {
   h2 {
     color: #FEE3D9;
     padding-bottom: 6vh;
+    z-index: 11;
   }
 
   .content {
+    z-index: 10;
     display: grid;
     grid-template-columns: 5fr 7fr;
     grid-gap: 13rem;
@@ -129,6 +131,29 @@ section {
       display: flex;
       align-items: center;
     }
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    left: -20vw;
+    bottom: 40vh;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: overlay;
+    background: linear-gradient(0deg, rgba(25,81,49,1) 0%, rgba(25,81,49,0) 50%),
+    url('../assets/images/trees/tree2.svg') no-repeat;
+    opacity: 0.5;
+
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    left: -20vw;
+    bottom: 40vh;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(25,81,49,1) 0%, rgba(25,81,49,0) 50%);
+    background-blend-mode: normal;
   }
 }
 

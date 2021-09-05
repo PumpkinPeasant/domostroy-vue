@@ -24,7 +24,7 @@ export default {
 name: "ServiceUnavailable",
   data () {
     return {
-      imgUrl: '../assets/images/house2.png',
+      imgUrl: '../assets/images/house2.jpg',
     }
 
 },

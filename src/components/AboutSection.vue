@@ -27,6 +27,7 @@ name: "AboutSection"
 
 <style scoped lang="scss">
 section {
+  position: relative;
   width: 100%;
   height: 50vh;
   flex-direction: column;
@@ -41,6 +42,7 @@ section {
     h3{
       color: white;
       font-weight: 400;
+      padding-bottom: 20px;
       span{
         color: #FFC9B9;
         font-weight: bold;
@@ -52,6 +54,9 @@ section {
         color: #FFC9B9;
       }
     }
+
   }
+
+
 }
 </style>

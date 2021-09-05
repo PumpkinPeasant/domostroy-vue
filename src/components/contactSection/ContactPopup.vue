@@ -4,14 +4,14 @@
     <div class="contacts-popup-text">
       <div class="contacts-popup-text-row" v-for="(contact, index) in contacts" :key="index">
         <a :href="contact.link">
-          <i class="material-icons-outlined">{{contact.icon}}</i>
+          <i style="font-size: 35px" class="material-icons">{{contact.icon}}</i>
           <span>{{contact.text}}</span>
         </a>
       </div>
     </div>
     <h3>Или просто оставьте заявку</h3>
     <div class="contacts-popup-actions">
-      <a class="moreTextButton" href="https://vk.com/im?media=&sel=-14943073">Назначьте встречу</a>
+      <a class="moreButton" href="https://vk.com/im?media=&sel=-14943073">Назначить встречу</a>
       <img class="vk-button" src="../../assets/images/icons/vk-orange.png" alt=""/>
     </div>
   </div>
@@ -61,12 +61,48 @@ export default {
   max-width: 30vw;
   height: 100%;
   width: 100%;
+  padding: 60px 70px;
   &-text {
     display: flex;
     flex-direction: column;
     &-row {
       display: flex;
       flex-direction: row;
+      padding: 8px 0;
+      a{
+        display: flex;
+        align-items: center;
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+        font-size: 19px;
+        i{
+          color: #FFC9B9;
+        }
+        span{
+          margin-left: 20px;
+          color: #195131;
+          transition: 0.2s;
+
+          &:hover{
+            color: #033319;
+            font-size: 20px;
+          }
+
+          &:active{
+            color: #033319;
+            font-size: 21px;
+          }
+        }
+      }
+    }
+  }
+  &-actions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .moreButton{
+      padding: 20px;
     }
   }
 }
@@ -74,6 +110,11 @@ export default {
 .vk-button {
   width: 57px;
   height: 57px;
+}
+
+h3{
+  font-weight: 400;
+  color: #033319;
 }
 
 </style>

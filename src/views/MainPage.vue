@@ -9,7 +9,7 @@
     <about-section/>
     <benefits-section/>
     <contacts-section/>
-    <Footer></Footer>
+<!--    <Footer></Footer>-->
   </div>
 </template>
 
@@ -24,7 +24,7 @@ import MaterialsSection from '@/components/MaterialsSection.vue'
 import ContactsSection from "@/components/ContactsSection";
 import AboutSection from '@/components/AboutSection.vue'
 import BenefitsSection from "@/components/BenefitsSection";
-import Footer from '@/components/Footer.vue'
+// import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'App',
@@ -37,7 +37,7 @@ export default {
   components: {
     BenefitsSection,
     MainNavigation,
-    Footer,
+    // Footer,
     MainSection,
     WorkingProcessSection,
     ConstructingSection,

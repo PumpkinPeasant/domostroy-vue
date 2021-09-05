@@ -62,6 +62,7 @@ export default {
 
 <style scoped lang="scss">
 section {
+  position: relative;
   width: 100%;
   height: 115vh;
   background: #195131 fixed;
@@ -73,6 +74,7 @@ section {
   }
 
   .content {
+    z-index: 12;
     display: flex;
     height: 100%;
     width: 100%;
@@ -139,6 +141,29 @@ section {
         background-blend-mode: multiply;
       }
     }
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: -40vw;
+    bottom: 50vh;
+    mix-blend-mode: overlay;
+    background: url('../assets/images/trees/tree3.svg') no-repeat;
+    opacity: 0.3;
+  }
+  &::after{
+    z-index: 1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 60vw;
+    bottom: -100vh;
+    mix-blend-mode: overlay;
+    background: url('../assets/images/trees/tree4.svg') no-repeat;
+    opacity: 0.3;
   }
 }
 

@@ -6,7 +6,7 @@ import VueLazyload from 'vue-lazyload'
 import  VueScrollTo from 'vue-scrollto';
 import YmapPlugin from 'vue-yandex-maps';
 
-import 'material-icons/iconfont/material-icons.css';
+import 'material-icons/iconfont/material-icons.scss';
 import './styles.scss';
 
 Vue.config.productionTip = false

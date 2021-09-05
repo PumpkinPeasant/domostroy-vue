@@ -1,6 +1,6 @@
 <template>
   <section id="building">
-<!--    <img class="decorationTree" src="../assets/images/trees/tree1.svg"  alt="">-->
+<img class="decorationTree" src="../assets/images/trees/tree1_cut.svg"  alt="">
     <div class="title">
       <h2>Строительство</h2>
     </div>
@@ -138,7 +138,7 @@ section {
   position: absolute;
   height: 90vh;
   top:-50vh;
-  left: 65vw;
+  right: 0;
 }
 
 @media screen and (min-width: 959px) and (max-width: 1280px) {
@@ -216,7 +216,7 @@ section {
       display: none;
     }
     .decorationTree{
-      left: 40vw;
+      right: 0;
     }
 
   }

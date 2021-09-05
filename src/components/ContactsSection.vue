@@ -5,7 +5,7 @@
         :coords="coords"
         :controls="controls"
         :scroll-zoom="false"
-        style="padding: 0 !important; border: #18ffff 2px solid; height: 100%" >
+        style="padding: 0 !important; height: 100%" >
       <yandex-map-marker
           marker-id="1"
           :coords="coords"
