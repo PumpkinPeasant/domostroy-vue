@@ -2,9 +2,8 @@
   <section id="building">
     <ClientOnly>
       <img
-        class="lazy"
+        class="decorationTree lazy"
         loading="lazy"
-        class="decorationTree"
         src="../assets/images/trees/tree1_cut.svg"
         alt=""
       />
@@ -29,10 +28,25 @@
           >Подробнее</a
         >
       </div>
+      <div class="sectionImgDiv">
+        <ClientOnly>
+          <img
+            class="housesSectionImg"
+            id="housesImg1"
+            src="../assets/images/constructionImg1.jpg"
+            alt=""
+          />
+          <img
+            class="housesSectionImg"
+            id="housesImg2"
+            src="../assets/images/textures/constructionImgDecoration1.jpg"
+            alt=""
+          />
+        </ClientOnly>
+      </div>
       <ClientOnly>
         <div class="sectionImgDiv">
           <img
-          
             loading="lazy"
             class="housesSectionImg lazy"
             id="housesImg1"
@@ -106,24 +120,32 @@ section {
   height: 190vh;
   background: #fee3d9 fixed;
   transition: 500ms linear;
+
   h2 {
+    z-index: 2;
     color: #d68c45;
     padding-bottom: 6vh;
   }
+
   h3 {
+    z-index: 2;
     font-weight: normal;
     padding-bottom: 2vh;
     color: #033319;
   }
+
   p {
+    z-index: 2;
     line-height: 1.5em;
     color: #20633e;
     padding: 1vh 0 3vh 0;
   }
 }
+
 .title {
   width: 100%;
 }
+
 .housesSection,
 .bathSection {
   display: flex;
@@ -147,35 +169,42 @@ section {
   flex-direction: column;
   height: 58vh;
 }
+
 .housesSectionImg,
 .bathSectionImg {
   max-height: 58vh;
 }
+
 #housesImg1 {
   position: relative;
   z-index: 2;
   box-shadow: 0 4px 29px -4px rgba(146, 66, 49, 0.5);
 }
+
 #housesImg2 {
   position: relative;
   z-index: 1;
   top: -55vh;
   left: 3vh;
 }
+
 #bathImg1 {
   position: relative;
   z-index: 2;
   box-shadow: 0 4px 29px -4px rgba(146, 66, 49, 0.5);
 }
+
 #bathImg2 {
   position: relative;
   z-index: 1;
   top: -54vh;
   left: -4vh;
 }
+
 .moreButton {
   color: #ffffff;
 }
+
 .decorationTree {
   position: absolute;
   height: 100vh;
@@ -187,13 +216,16 @@ section {
 @media screen and (min-width: 959px) and (max-width: 1280px) {
   section {
     height: 175vh;
+
     p {
       line-height: 1.7em;
     }
+
     .housesSectionImg,
     .bathSectionImg {
       max-height: 50vh;
     }
+
     #housesImg2 {
       position: relative;
       z-index: 1;
@@ -209,21 +241,44 @@ section {
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
   section {
-    height: 160vh;
-    p {
-      line-height: 1.7em;
+    height: 240vh;
+    padding-top: 10vh;
+
+    .sectionInfo {
+      width: 100%;
+      justify-content: flex-start;
+
+      .moreButton {
+        margin-top: calc(3em - 3vh);
+      }
     }
+
+    .housesSection {
+      flex-direction: column;
+    }
+
+    .bathSection {
+      flex-direction: column-reverse;
+    }
+
     .housesSectionImg,
     .bathSectionImg {
-      max-height: 40vh;
-    }
-    #housesImg2 {
       position: relative;
-      z-index: 1;
-      top: -36vh;
+      max-height: unset;
+      width: 100%;
+      height: auto;
     }
+
+    #housesImg2 {
+      display: none;
+    }
+
     #bathImg2 {
-      top: -42vh;
+      display: none;
+    }
+
+    .decorationTree {
+      right: 0;
     }
   }
 }
@@ -240,12 +295,15 @@ section {
         margin-top: calc(3em - 3vh);
       }
     }
+
     .housesSection {
       flex-direction: column;
     }
+
     .bathSection {
       flex-direction: column-reverse;
     }
+
     .housesSectionImg,
     .bathSectionImg {
       position: relative;
@@ -253,12 +311,15 @@ section {
       width: 100%;
       height: auto;
     }
+
     #housesImg2 {
       display: none;
     }
+
     #bathImg2 {
       display: none;
     }
+
     .decorationTree {
       right: 0;
     }
