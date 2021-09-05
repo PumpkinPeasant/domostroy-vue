@@ -1,6 +1,6 @@
 <template>
   <div class="contacts-popup">
-    <h3>Наш офис</h3>
+    <h3 class="heading-1-text">Наш офис</h3>
     <div class="contacts-popup-text">
       <div class="contacts-popup-text-row" v-for="(contact, index) in contacts" :key="index">
         <a :href="contact.link">
@@ -9,7 +9,7 @@
         </a>
       </div>
     </div>
-    <h3>Или просто оставьте заявку</h3>
+    <h3 class="heading-1-text">Или просто оставьте заявку</h3>
     <div class="contacts-popup-actions">
       <a class="moreButton" href="https://vk.com/im?media=&sel=-14943073">Назначить встречу</a>
       <img class="vk-button" src="../../assets/images/icons/vk-orange.png" alt=""/>
@@ -58,7 +58,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   max-height: 70vh;
-  max-width: 30vw;
+  max-width: 500px;
   height: 100%;
   width: 100%;
   padding: 60px 70px;

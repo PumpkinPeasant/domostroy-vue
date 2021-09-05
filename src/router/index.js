@@ -1,10 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Home from '@/views/ServiceUnavailable'
-import MainPage from '@/pages/Index.vue'
-//import Store from '@/store'
-//import MainSection from '@/components/MainSection'
-//import WorkingProcessSection from '@/components/WorkingProcessSection'
+import Home from '@/pages/Index'
+
 
 Vue.use(VueRouter)
 
@@ -12,7 +9,13 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: MainPage
+    component: Home,
+    meta: {
+      title: 'Домострой | Каркасное строительство',
+      content: 'Каркасное строительство "ДОМОСТРОЙ" СЕВЕРОДВИНСК\n' +
+          'КАРКАСНО-ПАНЕЛЬНОЕ СТРОИТЕЛЬСТВО ,\n' +
+          'КАРКАСНЫЕ ДОМА , ДОМА , САЙДИНГ , КРОВЛЯ , ЗАБОРЫ , ДОМА ИЗ БРУСА , ДОМА ИЗ ОЦИЛИНДРОВАННОГО БРЕВНА',
+    }
   },
 ]
 
@@ -36,7 +39,8 @@ const router = new VueRouter({
     }
   },
   routes
-})
+});
+
 
 export default router
 

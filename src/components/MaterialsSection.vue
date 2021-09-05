@@ -1,15 +1,17 @@
 <template>
   <section id="materials">
-    <h2>Материалы</h2>
+    <img class="decorationTree" src="../assets/images/trees/tree3.svg"  alt="">
+    <img class="decorationTree2" src="../assets/images/trees/tree4_cut.svg"  alt="">
+    <h2 class="heading-2-text">Материалы</h2>
     <div class="content">
       <div
           class="materialBox"
           :id="item.active ? 'material'+(index+1)+'Active' : 'material'+(index+1)"
           v-for="(item,index) in materialItems"
           :key="index">
-        <h3>{{ item.title }}</h3>
+        <h3 class="heading-1-text">{{ item.title }}</h3>
         <transition name="textAnimation">
-          <p v-if="item.active">{{ item.text }}</p>
+          <p class="primary-text" v-if="item.active">{{ item.text }}</p>
         </transition>
         <transition name="moreButtonAnimation" appear>
           <a class="moreTextButton" @click="item.active = !item.active">
@@ -100,14 +102,10 @@ section {
         margin-top: 50px;
       }
 
-      &Active {
-        background: #18ffff;
-        background-blend-mode: multiply;
-      }
     }
 
     #material1 {
-      background: url("../assets/images/materialsImg1.jpg"), rgba(25, 81, 49, .25) no-repeat;
+      background: url("../assets/images/materialsImg1.jpg") no-repeat, rgba(25, 81, 49, .25);
       background-blend-mode: multiply;
       background-size: 100%;
       &Active{
@@ -119,7 +117,7 @@ section {
     }
 
     #material2 {
-      background: url("../assets/images/materialsImg2.jpg"), rgba(25, 81, 49, .25) no-repeat;
+      background: url("../assets/images/materialsImg2.jpg") no-repeat, rgba(25, 81, 49, .25);
       background-blend-mode: multiply;
       background-size: 100%;
       &Active{
@@ -131,7 +129,7 @@ section {
     }
 
     #material3 {
-      background: url("../assets/images/materialsImg3.jpg"), rgba(25, 81, 49, .25) no-repeat;
+      background: url("../assets/images/materialsImg3.jpg") no-repeat, rgba(25, 81, 49, .25) no-repeat;
       background-blend-mode: multiply;
       background-size: 100%;
       &Active{
@@ -142,29 +140,27 @@ section {
       }
     }
   }
-  &::before{
-    content: "";
+
+  .decorationTree{
     position: absolute;
-    width: 100%;
-    height: 100%;
-    right: -40vw;
-    bottom: 50vh;
+    height: 100vh;
+    top:-50vh;
+    right: 0;
+    opacity: 0.4;
     mix-blend-mode: overlay;
-    background: url('../assets/images/trees/tree3.svg') no-repeat;
-    opacity: 0.3;
   }
-  &::after{
+
+  .decorationTree2{
     z-index: 1;
-    content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 60vw;
-    bottom: -100vh;
+    height: 100vh;
+    bottom: -70vh;
+    right: 0;
+    opacity: 0.4;
     mix-blend-mode: overlay;
-    background: url('../assets/images/trees/tree4.svg') no-repeat;
-    opacity: 0.3;
   }
+
+
 }
 
 .textAnimation-enter-active, .textAnimation-leave-active {

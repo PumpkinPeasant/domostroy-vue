@@ -56,27 +56,6 @@ section {
   padding: 12vh 8vw;
 }
 
-h2 {
-  font-family: Montserrat, serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1vw;
-}
-
-h3 {
-  font-family: "Yeseva One", serif;
-  font-size: 2vw;
-  letter-spacing: 0.05vw;
-}
-
-p {
-  font-family: Montserrat, serif;
-  font-weight: 500;
-  font-size: 1.2vw;
-  letter-spacing: -0.01vw;
-  line-height: 155%;
-}
-
 .moreButton {
   font-family: Montserrat, serif;
   text-transform: uppercase;
@@ -144,14 +123,6 @@ p {
 @media screen and (max-width: 599px) {
   section {
     padding: 10vh 6vw;
-
-    h2 {
-      font-size: 1.4rem;
-    }
-
-    h3 {
-      font-size: 3rem;
-    }
 
     p {
       font-size: 1.6rem;

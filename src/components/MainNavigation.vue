@@ -254,7 +254,7 @@ nav {
 .navScrolled {
   padding: 5px 8vw;
   background: #fff;
-  height: 11vh;
+  min-height: 11vh;
 
   ul {
     li {

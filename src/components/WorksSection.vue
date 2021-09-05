@@ -1,6 +1,6 @@
 <template>
   <section id="works">
-    <h2>Работы</h2>
+    <h2 class="heading-2-text">Работы</h2>
     <div class="content">
       <div class="sectionInfo">
         <accordion :section-items.sync="sectionItems" @refreshIndex="slideIndex = 0"/>
@@ -137,20 +137,20 @@ section {
   &::before{
     content: "";
     position: absolute;
-    left: -20vw;
+    left: 0;
     bottom: 40vh;
     width: 100%;
     height: 100%;
     mix-blend-mode: overlay;
     background: linear-gradient(0deg, rgba(25,81,49,1) 0%, rgba(25,81,49,0) 50%),
-    url('../assets/images/trees/tree2.svg') no-repeat;
+    url('../assets/images/trees/tree2_cut.svg') no-repeat;
     opacity: 0.5;
 
   }
   &::after{
     content: "";
     position: absolute;
-    left: -20vw;
+    left: 0;
     bottom: 40vh;
     width: 100%;
     height: 100%;

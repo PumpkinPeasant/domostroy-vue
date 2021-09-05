@@ -1,6 +1,6 @@
 <template>
   <section id="contacts">
-    <h2>Контакты</h2>
+    <h2 class="heading-2-text">Контакты</h2>
     <ClientOnly>
       <yandex-map
         :coords="coords"
