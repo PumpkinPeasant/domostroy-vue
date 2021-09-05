@@ -56,46 +56,6 @@ section {
   padding: 12vh 8vw;
 }
 
-.moreButton {
-  font-family: Montserrat, serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1vw;
-  color: #fdfdf9;
-  background-color: #195131;
-  text-decoration: none;
-  padding: 1vw 3vw;
-  width: fit-content;
-  transition: 0.2s;
-}
-
-.moreTextButton {
-  display: flex;
-  align-items: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 1.6rem;
-  text-decoration: none;
-  color: white;
-  border-bottom: 2px solid #d68c45;
-  width: fit-content;
-  transition: 0.2s;
-  cursor: pointer;
-  user-select: none;
-  &:hover {
-    padding-bottom: 3px;
-  }
-}
-
-.moreButton:hover {
-  background-color: #033319;
-}
-
-.moreButton:active {
-  background-color: #022411;
-}
-
 .decorationTree {
   position: absolute;
   z-index: 0;
@@ -106,37 +66,17 @@ section {
   section {
     padding: 10vh 8vw;
   }
-  .moreTextButton {
-    font-size: 1.2rem;
-  }
 }
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
   section {
     padding: 9vh 7vw;
   }
-  .moreTextButton {
-    font-size: 0.8rem;
-  }
 }
 
 @media screen and (max-width: 599px) {
   section {
     padding: 10vh 6vw;
-
-    p {
-      font-size: 1.6rem;
-      line-height: 1.8em;
-    }
-
-    .moreButton {
-      font-size: 1.5rem;
-      padding: 0.8em 2em;
-    }
-
-    .moreTextButton {
-      font-size: 0.8rem;
-    }
   }
 }
 </style>

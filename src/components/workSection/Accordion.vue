@@ -11,7 +11,7 @@
         </label>
         <div class="tab-content">
           <p class="primary-text">{{ item.text }}</p>
-          <a :href="item.link" class="moreTextButton" target="_blank">
+          <a :href="item.link" class="more-text-button" target="_blank">
             Подробнее
             <i class="material-icons">
               arrow_right_alt
@@ -92,7 +92,7 @@ input {
     }
 
     &:hover {
-      background: #093B20;
+      background: rgba(9,59,32, 0.3);
     }
 
     &::after {
@@ -118,7 +118,7 @@ input {
     transition: all .35s;
     border-bottom: 1px solid #628A73;
     color: white;
-    p, .moreTextButton{
+    p, .more-text-button{
       margin-left: calc(2rem + 4rem + 6rem);
     }
 
@@ -161,7 +161,7 @@ input:checked {
     }
 
     &-content {
-      p, .moreTextButton{
+      p, .more-text-button{
         margin-left: calc(1rem + 4rem + 2rem);
       }
 
@@ -205,10 +205,10 @@ input:checked {
     }
 
     &-content {
-      p, .moreTextButton{
+      p, .more-text-button{
         margin-left: calc(1rem + 4rem + 2rem);
       }
-      .moreTextButton{
+      .more-text-button{
         i{
           font-size: 1.2rem;
         }
@@ -238,6 +238,53 @@ input:checked {
 }
 
 @media screen and (max-width: 599px) {
+  .tab {
+    &-label {
+      padding: 1em;
+      &::after {
+        font-size: 1.4rem;
+      }
+      .title{
+        gap: 4rem;
+        span{
+          font-size: 16px;
+          width: 2rem;
+        }
+      }
+    }
 
+    &-content {
+      p, .more-text-button{
+        margin-left: 1rem;
+      }
+      .more-text-button{
+        i{
+          font-size: 1rem;
+        }
+      }
+
+    }
+  }
+
+  input:checked {
+    + .tab-label {
+      &::after {
+        transform: rotate(90deg);
+      }
+      span{
+        font-weight: 700;
+        color: #D68C45;
+      }
+    }
+
+    ~ .tab-content {
+      max-height: 100vh;
+      padding: 1.3em 1.3em 1.3em 0;
+      p{
+        padding-bottom: 1em;
+        text-align: justify;
+      }
+    }
+  }
 }
 </style>

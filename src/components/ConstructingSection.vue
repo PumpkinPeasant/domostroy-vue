@@ -21,7 +21,8 @@
       </div>
       <div class="sectionImgDiv">
         <img class="housesSectionImg" id="housesImg1" src="../assets/images/constructionImg1.jpg" alt="">
-        <img class="housesSectionImg" id="housesImg2" src="../assets/images/textures/constructionImgDecoration1.jpg" alt="">
+        <img class="housesSectionImg" id="housesImg2" src="../assets/images/textures/constructionImgDecoration1.jpg"
+             alt="">
       </div>
     </div>
 
@@ -52,7 +53,7 @@
 
 <script>
 export default {
-name: "ConstructingSection"
+  name: "ConstructingSection"
 }
 </script>
 
@@ -66,78 +67,96 @@ section {
   height: 190vh;
   background: #FEE3D9 fixed;
   transition: 500ms linear;
-  h2{
+
+  h2 {
+    z-index: 2;
     color: #D68C45;
     padding-bottom: 6vh;
   }
-  h3{
+
+  h3 {
+    z-index: 2;
     font-weight: normal;
     padding-bottom: 2vh;
     color: #033319;
   }
-  p{
+
+  p {
+    z-index: 2;
     line-height: 1.5em;
     color: #20633E;
     padding: 1vh 0 3vh 0;
   }
 }
-.title{
+
+.title {
   width: 100%;
 }
+
 .housesSection, .bathSection {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding-bottom: 15vh;
 }
-.sectionInfo{
+
+.sectionInfo {
   display: flex;
   height: 100%;
   justify-content: space-between;
   width: 30vw;
   flex-direction: column;
-  p{
+
+  p {
     text-align: justify;
   }
 }
-.sectionImgDiv{
+
+.sectionImgDiv {
   position: relative;
   display: flex;
   flex-direction: column;
-  height:  58vh;
+  height: 58vh;
 }
-.housesSectionImg, .bathSectionImg{
+
+.housesSectionImg, .bathSectionImg {
   max-height: 58vh;
 }
-#housesImg1{
+
+#housesImg1 {
   position: relative;
   z-index: 2;
-  box-shadow: 0 4px 29px -4px rgba(146,66,49,.5) ;
+  box-shadow: 0 4px 29px -4px rgba(146, 66, 49, .5);
 }
-#housesImg2{
+
+#housesImg2 {
   position: relative;
   z-index: 1;
   top: -55vh;
   left: 3vh;
 }
-#bathImg1{
+
+#bathImg1 {
   position: relative;
   z-index: 2;
-  box-shadow: 0 4px 29px -4px rgba(146,66,49,.5);
+  box-shadow: 0 4px 29px -4px rgba(146, 66, 49, .5);
 }
-#bathImg2{
+
+#bathImg2 {
   position: relative;
   z-index: 1;
   top: -54vh;
   left: -4vh;
 }
-.moreButton{
+
+.moreButton {
   color: #ffffff;
 }
-.decorationTree{
+
+.decorationTree {
   position: absolute;
   height: 100vh;
-  top:-50vh;
+  top: -50vh;
   right: 0;
   mix-blend-mode: overlay;
 }
@@ -145,19 +164,23 @@ section {
 @media screen and (min-width: 959px) and (max-width: 1280px) {
   section {
     height: 175vh;
+
     p {
       line-height: 1.7em;
     }
-    .housesSectionImg, .bathSectionImg{
+
+    .housesSectionImg, .bathSectionImg {
       max-height: 50vh;
     }
-    #housesImg2{
+
+    #housesImg2 {
       position: relative;
       z-index: 1;
       top: -47vh;
       left: 3vh;
     }
-    #bathImg2{
+
+    #bathImg2 {
       top: -46vh;
       left: -4vh;
     }
@@ -168,21 +191,45 @@ section {
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
   section {
-    height: 160vh;
-    p {
-      line-height: 1.7em;
+    height: 240vh;
+    padding-top: 10vh;
+
+    .sectionInfo {
+      width: 100%;
+      justify-content: flex-start;
+
+      .moreButton {
+        margin-top: calc(3em - 3vh);
+      }
     }
-    .housesSectionImg, .bathSectionImg{
-      max-height: 40vh;
+
+    .housesSection {
+      flex-direction: column;
     }
-    #housesImg2{
+
+    .bathSection {
+      flex-direction: column-reverse;
+    }
+
+    .housesSectionImg, .bathSectionImg {
       position: relative;
-      z-index: 1;
-      top: -36vh;
+      max-height: unset;
+      width: 100%;
+      height: auto;
     }
-    #bathImg2{
-      top: -42vh;
+
+    #housesImg2 {
+      display: none;
     }
+
+    #bathImg2 {
+      display: none;
+    }
+
+    .decorationTree {
+      right: 0;
+    }
+
   }
 }
 
@@ -191,32 +238,39 @@ section {
     height: 320vh;
     padding-top: 10vh;
 
-    .sectionInfo{
+    .sectionInfo {
       width: 100%;
       justify-content: flex-start;
-      .moreButton{
+
+      .moreButton {
         margin-top: calc(3em - 3vh);
       }
     }
-    .housesSection{
+
+    .housesSection {
       flex-direction: column;
     }
-    .bathSection{
+
+    .bathSection {
       flex-direction: column-reverse;
     }
-    .housesSectionImg, .bathSectionImg{
+
+    .housesSectionImg, .bathSectionImg {
       position: relative;
       max-height: unset;
       width: 100%;
       height: auto;
     }
-    #housesImg2{
+
+    #housesImg2 {
       display: none;
     }
-    #bathImg2{
+
+    #bathImg2 {
       display: none;
     }
-    .decorationTree{
+
+    .decorationTree {
       right: 0;
     }
 

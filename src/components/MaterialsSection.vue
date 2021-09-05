@@ -14,7 +14,7 @@
           <p class="primary-text" v-if="item.active">{{ item.text }}</p>
         </transition>
         <transition name="moreButtonAnimation" appear>
-          <a class="moreTextButton" @click="item.active = !item.active">
+          <a class="more-text-button" @click="item.active = !item.active">
             {{ item.active ? 'Скрыть' : 'Подробнее' }}
           </a>
         </transition>
@@ -98,7 +98,7 @@ section {
         padding: 30px;
       }
 
-      .moreTextButton {
+      .more-text-button {
         margin-top: 50px;
       }
 
@@ -174,5 +174,26 @@ section {
 
 .moreButtonAnimation-move {
   transition: all .3s ease;
+}
+
+@media screen and (min-width: 959px) and (max-width: 1280px) {
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+
+}
+
+@media screen and (max-width: 599px) {
+  section {
+    height: auto;
+    .content {
+      flex-direction: column;
+
+      .materialBox{
+        height: 30vh;
+      }
+    }
+  }
 }
 </style>

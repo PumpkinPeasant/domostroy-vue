@@ -149,14 +149,19 @@ export default {
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
   .slider{
+    position: relative;
     .slide{
+      width: 100%;
+      height: unset;
+      min-height: 60vw;
       img{
       }
       &::before{
-        top: 17px;
-        right: -17px;
+        display: none;
       }
       .controls{
+        height: 40px;
+        bottom: -10px;
         .controlBox{
           span{
             font-size: 1.2rem;
@@ -183,7 +188,43 @@ export default {
 }
 
 @media screen and (max-width: 599px) {
-
+  .slider{
+    position: relative;
+    .slide{
+      width: 100%;
+      height: unset;
+      min-height: 60vw;
+      img{
+      }
+      &::before{
+        display: none;
+      }
+      .controls{
+        height: 40px;
+        bottom: -10px;
+        .controlBox{
+          span{
+            font-size: 1.2rem;
+          }
+          i{
+            font-size: 1.5rem;
+            &:nth-child(1){
+              padding: 0 15px 0 5px;
+            }
+            &:nth-child(3){
+              padding: 0 5px 0 15px;
+            }
+            &:hover{
+              font-size: 1.6rem;
+            }
+            &:active{
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 </style>

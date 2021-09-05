@@ -171,20 +171,54 @@ section {
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
   section {
-    height: 105vh;
+    height: 140vh;
     .content {
-      grid-gap: 7rem;
+      display: flex;
+      flex-direction: column;
+      grid-gap: unset;
+      height: 100%;
+      justify-content: space-between;
+    }
 
+    &::before{
+      right: 0;
+      bottom: 80vh;
+      width: 100%;
+      height: 100%;
+    }
+    &::after{
+      right: 0;
+      bottom: 80vh;
+      width: 100%;
+      height: 100%;
     }
   }
 }
 
 @media screen and (max-width: 599px) {
   section {
-    height: 150vh;
+    height: auto;
     .content {
+
       display: flex;
       flex-direction: column;
+      grid-gap: unset;
+      height: 100%;
+      gap: 10vh;
+      justify-content: space-between;
+    }
+
+    &::before{
+      right: 0;
+      bottom: 80vh;
+      width: 100%;
+      height: 100%;
+    }
+    &::after{
+      right: 0;
+      bottom: 80vh;
+      width: 100%;
+      height: 100%;
     }
   }
 }

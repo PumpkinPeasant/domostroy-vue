@@ -21,3 +21,45 @@
   letter-spacing: -0.01vw;
   line-height: 155%;
 }
+
+//Buttons
+
+.more-text-button {
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  @include fluid-type(320px, 1900px, 14px, 16px);
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid #d68c45;
+  width: fit-content;
+  transition: 0.2s;
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    padding-bottom: 3px;
+  }
+}
+
+.moreButton {
+  font-family: Montserrat, serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  @include fluid-type(320px, 1900px, 14px, 16px);
+  color: #fdfdf9;
+  background-color: #195131;
+  text-decoration: none;
+  padding: 2rem 5rem;
+  width: fit-content;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: #033319;
+  }
+
+  &:active {
+    background-color: #022411;
+  }
+}

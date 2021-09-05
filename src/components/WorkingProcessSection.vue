@@ -53,15 +53,6 @@ section {
     line-height: 1.5em;
   }
 }
-//section::after{
-//  content: "";
-//  position: absolute;
-//  z-index: 1;
-//  background-repeat: no-repeat;
-//  background-size: contain;
-//  background-position: 50%;
-//  background-image: url("../assets/images/trees/tree1.svg");
-//}
 
 .sectionInfo {
   display: flex;
@@ -128,48 +119,72 @@ section {
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
   section {
-    height: 85vh;
-
-    p {
-      line-height: 1.7em;
-    }
-
-    .sectionSideImg {
-      max-height: 65vh;
-    }
-
-
-    .sectionInfoImg {
-      width: 33vw;
-    }
-  }
-}
-
-@media screen and (max-width: 599px) {
-  section {
-    height: 145vh;
+    height: 130vh;
     flex-direction: column;
 
     p {
       padding-bottom: 3em;
       line-height: 1.8em;
     }
-    .sectionInfo{
+
+    .sectionInfo {
       width: 100%;
     }
 
     .sectionSideImg {
       display: none;
     }
+
     .sectionInfoImgDiv {
       z-index: 5;
       align-self: unset;
       position: relative;
+
       .sectionInfoImg {
         position: unset;
         width: 100%;
         height: auto;
       }
+
+      #sectionInfoImg2 {
+        display: none;
+      }
+    }
+
+
+  }
+}
+
+@media screen and (max-width: 599px) {
+  section {
+    height: auto;
+    gap: 5vh;
+    flex-direction: column;
+
+    p {
+      padding-bottom: 3em;
+      line-height: 1.8em;
+    }
+
+    .sectionInfo {
+      width: 100%;
+    }
+
+    .sectionSideImg {
+      display: none;
+    }
+
+    .sectionInfoImgDiv {
+      z-index: 5;
+      align-self: unset;
+      position: relative;
+
+      .sectionInfoImg {
+        position: unset;
+        width: 100%;
+        height: auto;
+      }
+
       #sectionInfoImg2 {
         display: none;
       }
