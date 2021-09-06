@@ -225,13 +225,12 @@ section {
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
   section {
-    height: 240vh;
+    height: 320vh;
     padding-top: 10vh;
 
     .section-info {
       width: 100%;
       justify-content: flex-start;
-
       .moreButton {
         margin-top: calc(3em - 3vh);
       }

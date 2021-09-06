@@ -64,7 +64,7 @@ section {
 
 @media screen and (min-width: 959px) and (max-width: 1280px) {
   section {
-    padding: 10vh 8vw;
+    padding: 12vh 8vw;
   }
 }
 

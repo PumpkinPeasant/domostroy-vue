@@ -56,8 +56,8 @@ export default {
 
 section {
   display: grid;
-  grid-template-columns: 35% auto;
-  grid-column-gap: 8vw;
+  grid-template-columns: 37% auto;
+  grid-column-gap: 10vw;
   position: relative;
   width: 100%;
   background: #ffefe9;
@@ -69,13 +69,13 @@ section {
 
   h3 {
     font-weight: normal;
-    padding: 6vh 0 2vh 0;
+    padding-top: 2em;
     color: #033319;
   }
 
   p {
     color: #20633e;
-    padding: 1vh 0 3vh 0;
+    padding: 2em 0;
     line-height: 1.5em;
   }
 }
@@ -92,7 +92,7 @@ section {
 
   &-img-div {
     position: absolute;
-    bottom: 15vw;
+    bottom: 18vw;
     left: 8vw;
 
     .section-info-img {
@@ -132,52 +132,36 @@ section {
 
 @media screen and (min-width: 959px) and (max-width: 1280px) {
   section {
+    grid-template-columns: 45% auto;
+    grid-column-gap: 6vw;
 
     p {
       line-height: 1.3em;
     }
+
+    .section-info {
+
+      &-img-div {
+        position: absolute;
+        bottom: 14vw;
+        left: 8vw;
+
+        .section-info-img {
+          display: flex;
+          position: absolute;
+          width: 31vw;
+        }
+      }
+    }
+
+
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
   section {
-    flex-direction: column;
-
-    p {
-      padding-bottom: 3em;
-      line-height: 1.8em;
-    }
-
-    .section-info {
-      width: 100%;
-    }
-
-    .sectionSideImg {
-      display: none;
-    }
-
-    .section-info-img-div {
-      z-index: 5;
-      align-self: unset;
-      position: relative;
-
-      .section-info-img {
-        position: unset;
-        width: 100%;
-        height: auto;
-      }
-
-      #sectionInfoImg2 {
-        display: none;
-      }
-    }
-
-
-  }
-}
-
-@media screen and (max-width: 599px) {
-  section {
+    display: flex;
+    grid-template-columns: unset;
     gap: 5vh;
     flex-direction: column;
 
@@ -190,14 +174,54 @@ section {
       width: 100%;
     }
 
-    .sectionSideImg {
+    .section-side {
       display: none;
     }
 
     .section-info-img-div {
       z-index: 5;
-      align-self: unset;
       position: relative;
+      bottom: unset;
+      left: unset;
+
+      .section-info-img {
+        position: unset;
+        width: 100%;
+        height: auto;
+      }
+
+      #sectionInfoImg2 {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  section {
+    display: flex;
+    grid-template-columns: unset;
+    gap: 5vh;
+    flex-direction: column;
+
+    p {
+      padding-bottom: 3em;
+      line-height: 1.8em;
+    }
+
+    .section-info {
+      width: 100%;
+    }
+
+    .section-side {
+      display: none;
+    }
+
+    .section-info-img-div {
+      z-index: 5;
+      position: relative;
+      bottom: unset;
+      left: unset;
 
       .section-info-img {
         position: unset;
