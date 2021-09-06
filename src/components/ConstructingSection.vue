@@ -12,7 +12,7 @@
       <h2 class="heading-2-text">Строительство</h2>
     </div>
     <div class="housesSection">
-      <div class="sectionInfo">
+      <div class="section-info">
         <h3 class="heading-1-text">Дома</h3>
         <p class="primary-text">
           Технологии строительства и используемые материалы для строительства
@@ -27,22 +27,6 @@
         <a target="_blank" href="https://vk.com/domostroi_29" class="moreButton"
           >Подробнее</a
         >
-      </div>
-      <div class="sectionImgDiv">
-        <ClientOnly>
-          <img
-            class="housesSectionImg"
-            id="housesImg1"
-            src="../assets/images/constructionImg1.jpg"
-            alt=""
-          />
-          <img
-            class="housesSectionImg"
-            id="housesImg2"
-            src="../assets/images/textures/constructionImgDecoration1.jpg"
-            alt=""
-          />
-        </ClientOnly>
       </div>
       <ClientOnly>
         <div class="sectionImgDiv">
@@ -83,7 +67,7 @@
           />
         </div>
       </ClientOnly>
-      <div class="sectionInfo">
+      <div class="section-info">
         <h3 class="heading-1-text">Бани</h3>
         <p class="primary-text">
           Наши специалисты, с многолетним опытом строительства Бань, в лучших
@@ -153,7 +137,7 @@ section {
   align-items: flex-start;
   padding-bottom: 15vh;
 }
-.sectionInfo {
+.section-info {
   display: flex;
   height: 100%;
   justify-content: space-between;
@@ -244,7 +228,7 @@ section {
     height: 240vh;
     padding-top: 10vh;
 
-    .sectionInfo {
+    .section-info {
       width: 100%;
       justify-content: flex-start;
 
@@ -288,7 +272,7 @@ section {
     height: 320vh;
     padding-top: 10vh;
 
-    .sectionInfo {
+    .section-info {
       width: 100%;
       justify-content: flex-start;
       .moreButton {

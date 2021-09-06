@@ -1,6 +1,6 @@
 <template>
   <section id="workingProcess">
-    <div class="sectionInfo">
+    <div class="section-info">
       <h2 class="heading-2-text">Рабочий процесс</h2>
       <h3 class="heading-1-text">Не знаете с чего начать?</h3>
       <p class="primary-text">
@@ -11,32 +11,34 @@
         можно сэкономить!
       </p>
       <a target="_blank" href="https://vk.com/domostroi_29" class="moreButton"
-        >Подробнее</a
+      >Подробнее</a
       >
     </div>
     <ClientOnly>
-      <div class="sectionSide">
-        <img
-          loading="lazy"
-          class="sectionSideImg lazy"
-          src="../assets/images/processImg1.jpg"
-          alt=""
-        />
+      <div class="section-side">
+        <div class="wrapper">
+          <img
+              loading="lazy"
+              class="lazy"
+              src="../assets/images/processImg1.jpg"
+              alt=""
+          />
+        </div>
       </div>
-      <div class="sectionInfoImgDiv">
+      <div class="section-info-img-div">
         <img
-          loading="lazy"
-          class="sectionInfoImg lazy"
-          id="sectionInfoImg1"
-          src="../assets/images/processImg2.jpg"
-          alt=""
+            loading="lazy"
+            class="section-info-img lazy"
+            id="sectionInfoImg1"
+            src="../assets/images/processImg2.jpg"
+            alt=""
         />
         <img
-          loading="lazy"
-          class="sectionInfoImg lazy"
-          id="sectionInfoImg2"
-          src="../assets/images/textures/processImgDecoration.jpg"
-          alt=""
+            loading="lazy"
+            class="section-info-img lazy"
+            id="sectionInfoImg2"
+            src="../assets/images/textures/processImgDecoration.jpg"
+            alt=""
         />
       </div>
     </ClientOnly>
@@ -50,10 +52,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../mixins.scss";
+
 section {
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 35% auto;
+  grid-column-gap: 8vw;
+  position: relative;
   width: 100%;
-  height: 115vh;
   background: #ffefe9;
   transition: 500ms linear;
 
@@ -74,50 +80,50 @@ section {
   }
 }
 
-.sectionInfo {
+.section-info {
+  position: relative;
   display: flex;
-  width: 30vw;
   flex-direction: column;
+  z-index: 10;
 
   p {
     text-align: justify;
   }
+
+  &-img-div {
+    position: absolute;
+    bottom: 15vw;
+    left: 8vw;
+
+    .section-info-img {
+      display: flex;
+      position: absolute;
+      width: 31vw;
+    }
+
+    #sectionInfoImg1 {
+      z-index: 2;
+      box-shadow: 0 4px 29px -4px rgba(146, 66, 49, 0.5);
+    }
+
+    #sectionInfoImg2 {
+      z-index: 1;
+      left: -2vw;
+      top: 2vw;
+    }
+  }
 }
 
-.sectionInfoImgDiv {
-  align-self: flex-end;
-  position: absolute;
-}
+.section-side {
+  width: unset !important;
+  @include aspect-ratio(1600, 1968);
 
-.sectionInfoImg {
-  display: flex;
-  position: absolute;
-  width: 31vw;
-}
-
-#sectionInfoImg1 {
-  z-index: 2;
-  bottom: -10vw;
-  box-shadow: 0 4px 29px -4px rgba(146, 66, 49, 0.5);
-}
-
-#sectionInfoImg2 {
-  z-index: 1;
-  bottom: -12vw;
-  left: -2vw;
-}
-
-.sectionSide {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.sectionSideImg {
-  width: auto;
-  height: 100%;
-  max-height: 90vh;
-  box-shadow: 0 4px 29px -4px rgba(146, 66, 49, 0.5);
-  z-index: 3;
+  .wrapper {
+    img {
+      box-shadow: 0 4px 29px -4px rgba(146, 66, 49, 0.5);
+      z-index: 3;
+    }
+  }
 }
 
 .moreButton {
@@ -126,20 +132,15 @@ section {
 
 @media screen and (min-width: 959px) and (max-width: 1280px) {
   section {
-    height: 95vh;
 
     p {
-      line-height: 1.7em;
+      line-height: 1.3em;
     }
-  }
-  .sectionSideImg {
-    max-height: 80vh;
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 959px) {
   section {
-    height: 130vh;
     flex-direction: column;
 
     p {
@@ -147,7 +148,7 @@ section {
       line-height: 1.8em;
     }
 
-    .sectionInfo {
+    .section-info {
       width: 100%;
     }
 
@@ -155,12 +156,12 @@ section {
       display: none;
     }
 
-    .sectionInfoImgDiv {
+    .section-info-img-div {
       z-index: 5;
       align-self: unset;
       position: relative;
 
-      .sectionInfoImg {
+      .section-info-img {
         position: unset;
         width: 100%;
         height: auto;
@@ -177,7 +178,6 @@ section {
 
 @media screen and (max-width: 599px) {
   section {
-    height: auto;
     gap: 5vh;
     flex-direction: column;
 
@@ -185,7 +185,8 @@ section {
       padding-bottom: 3em;
       line-height: 1.8em;
     }
-    .sectionInfo {
+
+    .section-info {
       width: 100%;
     }
 
@@ -193,12 +194,12 @@ section {
       display: none;
     }
 
-    .sectionInfoImgDiv {
+    .section-info-img-div {
       z-index: 5;
       align-self: unset;
       position: relative;
 
-      .sectionInfoImg {
+      .section-info-img {
         position: unset;
         width: 100%;
         height: auto;

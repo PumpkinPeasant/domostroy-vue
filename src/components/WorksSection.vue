@@ -2,7 +2,7 @@
   <section id="works">
     <h2 class="heading-2-text">Работы</h2>
     <div class="content">
-      <div class="sectionInfo">
+      <div class="section-info">
         <accordion :section-items.sync="sectionItems" @refreshIndex="slideIndex = 0"/>
       </div>
       <div class="slider">
@@ -129,7 +129,7 @@ section {
     grid-template-columns: 5fr 7fr;
     grid-gap: 13rem;
 
-    .sectionInfo{
+    .section-info{
       display: flex;
       align-items: center;
     }

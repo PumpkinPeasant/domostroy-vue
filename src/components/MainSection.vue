@@ -62,7 +62,8 @@ section {
 }
 
 section.lazy-bg-loaded  {
-  background: url("../assets/images/house2.jpg"), rgba(0, 0, 0, 0.5) fixed;
+  background: url("../assets/images/house2.jpg") no-repeat, rgba(0, 0, 0, 0.5) fixed;
+  background-size: cover;
 }
 
 @media screen and (min-width: 959px) and (max-width: 1280px) {
